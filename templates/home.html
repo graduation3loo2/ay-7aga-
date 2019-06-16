@@ -1,0 +1,465 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exodus</title>
+
+    <!-- Start Skitter Slider HEAD Section -->
+    <link rel="stylesheet" href="{% static 'css/skitter.css' %}" />
+    <!-- End Skitter Slider HEAD Section -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"/> -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome/css/all.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/exo-2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  </head>
+  <body>
+
+    <!-- ///////////////////////////////////////////////////////////////////////// -->
+		<div id="signup" class="modal">
+			<form class="modal-content animate" action=""> <!--el data 7atro7 lel server esmo eh -->
+				<div class='usercontainer'>
+			        <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Form">x</span>
+					<img src="{%static 'photos/user.jpg' %}" alt="Avatar" class="avatar">
+					<label> <p> Create Your Account </p></label>
+				</div>
+				<div class="container">
+					<input type="text" name="usernamedb" placeholder=" Username" >
+					<br><br>
+					<input type="text" placeholder=" Enter Email" name="email" >
+					<br><br>
+					<input type="text" placeholder=" Phone Number" name="number" required >
+					<br><br>
+					<input type="text" placeholder=" Country" name="Country" required>
+					<br><br>
+					<input type="text" placeholder=" City" name="city" >
+					<br><br>
+					<input type="password" placeholder=" Enter Password" name="psw" required>
+					<br><br>
+					<input type="password" placeholder=" Confirm Password" name="psw" required>
+					<br><br>
+					<label class="terms" >  By proceeding I agree to EXODUS's <a href="#" style="color:blue">Terms & Privacy</a></label> <br>
+					<button type="button" class=" btnsignup " >Submit</button>
+					<button type="button" class=" btnsignup " onclick="document.getElementById('signup').style.display='none';document.getElementById('loginform').style.display='block'" >Already Have Account</button> <br> <br>
+				</div>
+			</form>
+		</div>
+		<!-- ///////////////////////////////////////////////////////////////////////// -->
+	  <div id="loginform" class="modal">
+			<form class="modal-content animate" action=""> <!--el data 7atro7 lel server esmo eh -->
+				<div class='usercontainer'>
+			       <span onclick="document.getElementById('loginform').style.display='none'" class="close" title="Close Form">x</span>
+				</div>
+				<div class="Login">
+                <br> <p> Please Login </p>
+                </div>
+				<div class="container">
+					<label for="name"> <b>Username</b></label> <br>
+					<input type="text" placeholder=" Enter Email" name="email" required>
+					<br><br>
+					<label for="psw"> <b>Password</b></label> <br>
+					<input type="password" placeholder=" Enter Password" name="psw" required><br>
+					<!--<label  class="Terms">  By proceeding I agree to EXODUS's <a href="#" style="color:blue">Terms & Privacy</a></label> <br> -->
+					<!--<label class="rm"> <input type="checkbox" checked="checked" name="remember"> Remember me </label>-->
+                    <span class="psw">Forgot <a href="#">password?</a></span><br>
+                    <button class="btn" type="submit">Login</button><br>
+					<button type="button" class=" btn " onclick="document.getElementById('loginform').style.display='none';document.getElementById('signup').style.display='block'" >Create Account</button> <br> <br>
+				</div>
+			</form>
+		</div>
+    <!-- ///////////////////////////////////////////////////////////////////////// -->
+
+    <!-- Start Header -->
+    <div class="header home-header">
+      <div class="overlay">
+        <div class="navbar"> <!-- Start Nav Bar -->
+          <div class="contain">
+            <div class="logo">
+              <a href="{% url 'home' %}"><img src="{% static 'photos/others/logo-2-ed.png' %}" alt=""></a>
+            </div>
+            <div class="tabs">
+              <ul>
+                <li>
+                  <a href="{% url 'home' %}">home</a>
+                </li>
+                <li>
+                  <a href="{% url 'trips' %}">trips</a>
+                </li>
+                <li>
+                  <a href="{% url 'votes' %}">votes</a>
+                </li>
+                <li>
+                  <a href="{% url 'agencies' %}">agencies</a>
+                </li>
+                <li class="sign_in" onclick="document.getElementById('loginform').style.display='block'">
+                  <a>sign in</a>
+                </li>
+              </ul>
+              <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div> <!-- End Nav Bar -->
+
+        <div class="head-title"> <!-- Start Head Search -->
+          <div>
+          <h1>explore out of limitations</h1>
+          <p>This website helps you choose a trip that suits you from a variety of options<br>
+            in an easy and simple way that simplifies your options.</p>
+          <form action="" method="">
+            <i class="fas fa-map-marker-alt"></i>
+            <input type="text" name="city" value="" placeholder="Tell us where you want to go...">
+            <button type="button" name="button">search</button>
+            <button class="adv-trigger" type="button" name="button">advanced search</button>
+          </form>
+          <div class="clear"></div>
+          </div>
+        </div> <!-- End Head Search -->
+      </div>
+    </div>
+    <!-- End Header -->
+
+    <!-- Start Advanced Search -->
+    <div class="adv-search">
+      <div class="contain">
+        <form action="" method="">
+          <input type="number" name="price-from" value="" placeholder="Price from...">
+          <input type="number" name="price-to" value="" placeholder="Price to...">
+          <input type="text" class="departure" name="date-of-departure" value="" placeholder="Date of departure">
+          <input type="number" name="duration" value="" placeholder="Duration in days">
+          <button type="button" name="button">Search</button>
+        </form>
+      </div>
+    </div>
+    <!-- End Advanced Search -->
+
+    <!-- Start Lates Votes -->
+    <div class="latest-votes">
+      <div class="contain">
+        <div class="outer-head">
+          <h2>latest votes</h2>
+          <a href="{% url 'votes' %}"><button class="see-more" type="button" name="button">see more</button></a>
+        </div>
+        <div class="clear"></div>
+        <div class="main-vote">
+          <div class="vote-img">
+            <img src="{% static 'photos/header-18.jpg' %}" alt="">
+            <div class="overlay">
+              <button class="learn-more" type="button" name="button">learn more</button>
+            </div>
+          </div>
+          <div class="vote-info">
+            <div class="inner-head">
+              <h3>pyramids of giza</h3>
+              <h3>roca travel</h3>
+            </div>
+            <div class="clear"></div>
+            <p>This website helps you choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options this website helps you
+              choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options.</p>
+            <span class="interested">70<i class="fas fa-thumbs-up"></i></span>
+            <span class="notinterested">30<i class="fas fa-thumbs-down"></i></span>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Latest Votes -->
+
+    <!-- Start Most Going Trips -->
+    <div class="most-going">
+      <div class="contain">
+        <div class="outer-head">
+          <h2>most going trips</h2>
+          <a href="{% url 'trips' %}"><button class="see-more" type="button" name="button">see more</button></a>
+        </div>
+        <div class="clear"></div>
+        <div class="cards">
+          <div class="trip-card active" data-id="ext1">
+            <img src="{%  static 'photos/header-10.jpg'%}" alt="">
+            <div class="expand">
+              <h4>cairo, giza</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+          <div class="trip-card" data-id="ext2">
+            <img src="{%  static 'photos/header-9.jpg' %}" alt="">
+            <div class="expand">
+              <h4>siwa</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+          <div class="trip-card" data-id="ext3">
+            <img src="{% static 'photos/header-8.jpg' %}" alt="">
+            <div class="expand">
+              <h4>luxor and aswan</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+          <div class="trip-card" data-id="ext4">
+            <img src="{% static 'photos/header-7.jpg' %}" alt="">
+            <div class="expand">
+              <h4>alexandria</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div>
+          <div id="ext1" class="extention active">
+            <div class="stats">
+              <span><i class="fas fa-plane"></i> 40 going</span>
+              <span><i class="far fa-eye"></i> 400 views</span>
+              <h4>roca travel</h4>
+            </div>
+            <img src="{% static 'photos/header-3.jpg' %}" alt="">
+            <p>This website helps you choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options this website helps you
+              choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options.</p>
+            <button class="learn-more" type="button" name="button">learn more</button>
+          </div>
+          <div id="ext2" class="extention">
+            <div class="stats">
+              <span><i class="fas fa-plane"></i> 30 going</span>
+              <span><i class="far fa-eye"></i> 300 views</span>
+              <h4>travel choice</h4>
+            </div>
+            <img src="{% static 'photos/header-7.jpg' %}" alt="">
+            <p>This website helps you choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options this website helps you
+              choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options.</p>
+            <button class="learn-more" type="button" name="button">learn more</button>
+          </div>
+          <div id="ext3" class="extention">
+            <div class="stats">
+              <span><i class="fas fa-plane"></i> 20 going</span>
+              <span><i class="far fa-eye"></i> 200 views</span>
+              <h4>cairo overland</h4>
+            </div>
+            <img src="{% static 'photos/header-8.jpg' %}" alt="">
+            <p>This website helps you choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options this website helps you
+              choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options.</p>
+            <button class="learn-more" type="button" name="button">learn more</button>
+          </div>
+          <div id="ext4" class="extention">
+            <div class="stats">
+              <span><i class="fas fa-plane"></i> 10 going</span>
+              <span><i class="far fa-eye"></i> 100 views</span>
+              <h4>lucky tour</h4>
+            </div>
+            <img src="{%  static 'photos/header-9.jpg' %}" alt="">
+            <p>This website helps you choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options this website helps you
+              choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options.</p>
+            <button class="learn-more" type="button" name="button">learn more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Most Booking Trips -->
+
+    <!-- Start Most Followed Agencies -->
+    <div class="most-followed">
+      <div class="contain">
+        <div class="outer-head">
+          <h2>most followed agencies</h2>
+          <a href="{% url 'agencies' %}"><button class="see-more" type="button" name="button">see more</button></a>
+        </div>
+        <div class="agencies">
+          <div class="agency-card">
+            <img src="{%  static 'photos/others/agency-1.jpg' %}" alt="">
+            <h3>roca travel</h3>
+            <div class="follow-btn">
+              <span>150</span>
+              <button class="follow" type="button" name="button">follow</button>
+            </div>
+          </div>
+          <div class="agency-card">
+            <img src="{% static 'photos/others/agency-2.jpg' %}" alt="">
+            <h3>lucky tour</h3>
+            <div class="follow-btn">
+              <span>135</span>
+              <button class="follow" type="button" name="button">follow</button>
+            </div>
+          </div>
+          <div class="agency-card">
+            <img src="{% static 'photos/others/agency-3.jpg' %}" alt="">
+            <h3>cairo overland</h3>
+            <div class="follow-btn">
+              <span>120</span>
+              <button class="follow" type="button" name="button">follow</button>
+            </div>
+          </div>
+          <div class="agency-card">
+            <img src="{% static 'photos/others/agency-4.gif' %}" alt="">
+            <h3>city link</h3>
+            <div class="follow-btn">
+              <span>105</span>
+              <button class="follow" type="button" name="button">follow</button>
+            </div>
+          </div>
+          <div class="agency-card">
+            <img src="{% static 'photos/others/agency-5.png' %}" alt="">
+            <h3>travel choice</h3>
+            <div class="follow-btn">
+              <span>90</span>
+              <button class="follow" type="button" name="button">follow</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Most Followed Agencies -->
+
+    <!-- Start Recent Trips -->
+    <div class="recent-trips">
+      <div class="contain">
+        <div class="outer-head">
+          <h2>recent trips</h2>
+          <a href="{% url 'trips' %}"><button class="see-more" type="button" name="button">see more</button></a>
+        </div>
+        <div class="clear"></div>
+        <div class="cards">
+          <div class="trip-card active" data-id="rec1">
+            <img src="{% static 'photos/header-6.jpeg' %}" alt="">
+            <div class="expand">
+              <h4>cairo, giza</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+          <div class="trip-card" data-id="rec2">
+            <img src="{% static 'photos/header-5.jpg' %}" alt="">
+            <div class="expand">
+              <h4>siwa</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+          <div class="trip-card" data-id="rec3">
+            <img src="{% static 'photos/header-4.jpg' %}" alt="">
+            <div class="expand">
+              <h4>luxor and aswan</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+          <div class="trip-card" data-id="rec4">
+            <img src="{% static 'photos/header-3.jpg' %}" alt="">
+            <div class="expand">
+              <h4>alexandria</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div>
+          <div id="rec1" class="extention active">
+          <div class="stats">
+              <span><i class="fas fa-plane"></i>10 going</span>
+              <span><i class="fas fa-eye"></i>100 views</span>
+              <h4>roca travel</h4>
+            </div>
+            <img src="{% static 'photos/header-3.jpg' %}" alt="">
+            <p>This website helps you choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options this website helps you
+              choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options.</p>
+            <button class="learn-more" type="button" name="button">learn more</button>
+          </div>
+          <div id="rec2" class="extention">
+            <div class="stats">
+              <span><i class="fas fa-plane"></i>20 going</span>
+              <span><i class="fas fa-eye"></i>200 views</span>
+              <h4>cairo overland</h4>
+            </div>
+            <img src="{% static 'photos/header-7.jpg' %}" alt="">
+            <p>This website helps you choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options this website helps you
+              choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options.</p>
+            <button class="learn-more" type="button" name="button">learn more</button>
+          </div>
+          <div id="rec3" class="extention">
+            <div class="stats">
+              <span><i class="fas fa-plane"></i>30 going</span>
+              <span><i class="fas fa-eye"></i>300 views</span>
+              <h4>city link</h4>
+            </div>
+            <img src="{%  static 'photos/header-8.jpg' %}" alt="">
+            <p>This website helps you choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options this website helps you
+              choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options.</p>
+            <button class="learn-more" type="button" name="button">learn more</button>
+          </div>
+          <div id="rec4" class="extention">
+            <div class="stats">
+              <span><i class="fas fa-plane"></i>40 going</span>
+              <span><i class="fas fa-eye"></i>400 views</span>
+              <h4>travel choice</h4>
+            </div>
+            <img src="{% static 'photos/header-9.jpg' %}" alt="">
+            <p>This website helps you choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options this website helps you
+              choose a trip that suits you from a variety of options
+              in an easy and simple way that simplifies your options.</p>
+            <button class="learn-more" type="button" name="button">learn more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Recent Trips -->
+
+    <!-- Start Footer -->
+    <div class="footer">
+      <div class="contain">
+        <div class="slogan">
+          <h2>exodus</h2>
+          <p>This website helps you choose a trip that suits you from a variety of options
+            in an easy and simple way that simplifies your options.</p>
+        </div>
+        <div class="contact">
+          <h2>contact us</h2>
+          <div class="messenger">
+            <span>messenger</span>
+            <p>facebook.com/exodus</p>
+          </div>
+          <div class="whats">
+            <span>whats app</span>
+            <p>+20 0120 745 3145</p>
+          </div>
+          <div class="email">
+            <span>email</span>
+            <p>exodus@yahoo.com</p>
+          </div>
+        </div>
+        <div class="links">
+          <h2>links</h2>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a>
+          <div class="app">
+            <a href="https://play.google.com/store" target="_blank">
+            <i class="fab fa-android"></i>
+            <h3>download exodus app</h3>
+          </a>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <!-- End Footer -->
+
+    <script src="{% static 'js/JQuery%20(v3.2.1).js' %}"></script>
+    <script src="{% static 'js/jquery.skitter.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="{%  static 'js/script.js' %}"></script>
+  </body>
+</html>

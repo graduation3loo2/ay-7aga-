@@ -1,0 +1,483 @@
+
+.navbar{ /* Start Nav Bar */
+  overflow: hidden;
+  padding-top: 10px;
+  background-color: #333
+}
+.navbar .contain > div{
+  float: left;
+  overflow: hidden;
+}
+.navbar .contain .logo{
+  width: 50%;
+}
+
+.navbar .contain .logo img{
+  height: 55px;
+}
+
+.navbar .contain .tabs{
+  width: 50%;
+}
+.navbar .contain .tabs ul li{
+  float: left;
+  margin: 4px 2px;
+  width: 19.346%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.navbar .contain .tabs ul .sign_in{
+  margin-right: 0
+}
+.navbar .contain .tabs ul .sign_in a{
+  background-color: #fff;
+  color: #55afff;
+  border: 2px solid #3898ec;
+}
+.navbar .contain .tabs ul .sign_in a:hover{
+  background-color: var(--main-color);
+  color: #fff;
+}
+.navbar .contain .tabs ul li:hover a{
+  background-color: rgba(163, 163, 163, 0.28);
+  color: #55afff;
+}
+.navbar .contain .tabs ul li a{
+  font-size: 17px;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 10px 0;
+  width: 100%;
+  display: block;
+  transition: all 0.25s ease-in-out;
+}
+/* End Nav Bar */
+
+/* Start Skitter Slider */
+.skitter{
+  max-width: 100%;
+  height: 500px !important;
+}
+.skitter .container_skitter,
+.skitter.with-dots{
+  margin: 0;
+  border-radius: 0
+}
+.skitter .next_button{
+  right: 20px
+}
+.skitter .prev_button{
+  left: 20px
+}
+.skitter .info_slide .image_number:hover,
+.skitter .info_slide .image_number.image_number_select {
+  background-color: #3898ec;
+  color: white
+}
+/* End Skitter Slider */
+
+/* Start Trip Tabs */
+.trip-tabs{
+  overflow: hidden;
+  margin-top: 5px;
+  box-shadow: 0px 0px 10px -3px #666;
+}
+.trip-tabs > div{
+  float: left;
+  width: 33.33%;
+  padding: 10px 0;
+  border-top: 2px solid var(--main-color);
+  background-color: var(--main-color);
+  color: #eee;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 19px;
+  cursor: pointer;
+  transition: all .25s ease-in-out;
+}
+.trip-tabs div:hover{
+  background-color: var(--hover-color);
+  border-top: 2px solid var(--hover-color);
+}
+.trip-tabs div.active{
+  background-color: #eee;
+  color: #555;
+}
+.trip-tabs div.active:hover{
+  border-top: 2px solid var(--main-color);
+}
+/* End Trip Tabs */
+
+/* Start Trip Details */
+.trip-details,
+.trip-reviews,
+.trip-similar{
+  background-color: #eee;
+  margin-bottom: 40px;
+  padding: 15px 0 5px;
+  overflow: hidden;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: none;
+  box-shadow: 0px 0px 10px -3px #666;
+}
+.trip-details.active,
+.trip-reviews.active,
+.trip-similar.active{
+  display: block;
+}
+.trip-details .stats{
+  overflow: hidden;
+  border-bottom: 1px solid #bbb;
+  padding: 10px 30px;
+}
+.trip-details .stats span{
+  text-transform: capitalize;
+  float: left;
+  width: 11%;
+  text-align: left;
+  font-weight: 500;
+  font-size: 17px;
+  color: #555;
+  margin-right: 4%;
+  transition: all .25s ease-in-out;
+}
+.trip-details .stats span i{
+  margin-right: 8px;
+  color: var(--main-color);
+}
+.trip-details .stats span:hover{
+  color: var(--main-color);
+}
+.trip-details .stats h4{
+  text-transform: capitalize;
+  color: #333;
+  width: 20%;
+  float: left;
+  text-align: right;
+  font-size: 19px;
+  margin-left: 50%;
+  font-weight: 600;
+}
+.trip-details .stats p{
+  color: #555;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 20px auto 10px;
+  width: 95%;
+}
+
+.trip-details .info .info-row{
+  padding: 5px 30px;
+  border-bottom: 1px solid #bbb;
+  transition: all .25s ease-in-out;
+}
+.trip-details .info .info-row:hover{
+  background-color: #ddd;
+}
+.trip-details .info .info-row label{
+  margin: 5px 0;
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: 19px;
+  border-bottom: 2px solid var(--main-color);
+  padding-bottom: 3px;
+  color: #333;
+  font-weight: 600;
+  transition: all .25s ease-in-out;
+}
+.trip-details .info .info-row:hover label{
+  color: var(--main-color);
+}
+.trip-details .info .info-row:hover p{
+  color: #000;
+}
+.trip-details .info .info-row p{
+  color: #555;
+  font-size: 17px;
+  margin: 5px auto;
+  width: 95%;
+  font-weight: 500;
+}
+
+.trip-details .trip-actions{
+  margin: 20px 0;
+  text-align: center;
+}
+.trip-details .trip-actions button{
+  padding: 7px 15px;
+  text-transform: capitalize;
+  font-size: 17px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+.trip-details .trip-actions button:hover{
+  background: var(--hover-color);
+  border: none;
+  color: #fff;
+}
+/* End Trip Details */
+
+/* Start Trip Reviews */
+.trip-reviews{
+  padding: 20px 30px;
+}
+.trip-reviews .comments{
+  float: left;
+  width: 68%;
+  margin-right: 2%;
+}
+.trip-reviews .comments .add-comment{}
+.trip-reviews .comments .add-comment input{
+  float: left;
+  width: 79%;
+  padding: 8px 8px 8px 15px;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  font-style: italic;
+  margin-right: 1%;
+  box-shadow: 0 0 5px -1px #999;
+}
+.trip-reviews .comments .add-comment button:hover{
+  background: #1869b1;
+  color: #fff;
+}
+.trip-reviews .comments .add-comment button{
+  float: left;
+  width: 20%;
+  padding: 8px;
+  text-transform: capitalize;
+  font-size: 18px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+
+.trip-reviews .comments .comments-list{}
+.trip-reviews .comments .comments-list .comment-box{
+  overflow: hidden;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  box-shadow: 0px 1px 7px -2px #888;
+  transition: all .20s ease-in-out;
+}
+.trip-reviews .comments .comments-list .comment-box:hover{
+  border-color: var(--main-color);
+  box-shadow: none;
+}
+.trip-reviews .comments .comments-list .comment-box img{
+  width: 25px;
+  float: left;
+}
+.trip-reviews .comments .comments-list .comment-box h4{
+  text-transform: capitalize;
+  float: left;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 1px 8px;
+}
+.trip-reviews .comments .comments-list .comment-box span{
+  float: right;
+  margin: 1px 0;
+  font-weight: 500;
+}
+.trip-reviews .comments .comments-list .comment-box .com-content p{
+  margin-top: 5px;
+  padding-top: 5px;
+  line-height: 1.4;
+  color: #555;
+  border-top: 2px solid var(--main-color);
+}
+
+.trip-reviews .rating{
+  padding: 1% 1%;
+  float: left;
+  width: 30%;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  box-shadow: 0px 1px 7px -2px #888;
+  transition: all .20s ease-in-out;
+}
+.trip-reviews .rating:hover{
+  border-color: var(--main-color);
+  box-shadow: none;
+}
+
+.trip-reviews .rating .stars{
+  text-align: center;
+}
+.trip-reviews .rating .stars h2{
+  text-transform: capitalize;
+  color: #333;
+  font-weight: 600;
+  font-size: 25px;
+  margin: 10px auto;
+}
+.trip-reviews .rating .stars .fa{
+  font-size: 25px;
+  transition: all .20s ease-in-out;
+  cursor: pointer;
+}
+.trip-reviews .rating .stars .fa:hover{
+  color: orange;
+}
+.trip-reviews .rating .stars .checked {
+  color: orange;
+}
+.trip-reviews .rating .stars p{
+  margin: 10px 0;
+}
+/* Three column layout */
+.trip-reviews .rating .side {
+  float: left;
+  width: 16%;
+  margin-top: 15px;
+}
+.trip-reviews .rating .middle {
+  float: left;
+  width: 70%;
+  margin-top: 15px;
+}
+/* Place text to the right */
+.trip-reviews .rating .right {
+  text-align: right;
+  width: 14%;
+}
+/* Clear floats after the columns */
+.trip-reviews .rating .row {
+  border-top: 2px solid var(--main-color);
+}
+.trip-reviews .rating .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* The bar container */
+.trip-reviews .rating .bar-container {
+  width: 100%;
+  background-color: #ccc;
+  text-align: center;
+  color: white;
+}
+/* Individual bars */
+.trip-reviews .rating .bar-5 {width: 60%; height: 18px; background-color: #4CAF50;}
+.trip-reviews .rating .bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+.trip-reviews .rating .bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+.trip-reviews .rating .bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+.trip-reviews .rating .bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+
+/* End Trip Reviews */
+
+/* Start Trip Similar */
+.trip-similar .trip-post{
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #aaa;
+  margin: 20px 30px;
+
+}
+.trip-similar .trip-post .trip-img{
+  width: 35%;
+  height: 180px;
+  float: left;
+  display: inline-block;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.trip-similar .trip-post .trip-img img{
+  width: 100%;
+  height: 100%;
+}
+.trip-similar .trip-post .trip-img .overlay{
+  display: none;
+  transition: all 0.25s ease-in-out;
+}
+.trip-similar .trip-post:hover .overlay{
+  display: inline-block;
+}
+.trip-similar .trip-post .trip-img .overlay .learn-more{
+  float: left;
+  position: relative;
+  top: 80px;
+  left: 125px;
+  padding: 8px 12px;
+  text-transform: capitalize;
+  font-size: 16px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+.trip-similar .trip-post .trip-img .overlay .learn-more:hover{
+  background: #1869b1;
+}
+
+.trip-similar .trip-post .trip-info{
+  float: left;
+  width: 65%;
+  padding-left: 20px;
+}
+.trip-similar .trip-post .trip-info h2{
+  float: left;
+  width: 48%;
+  margin: 10px 0;
+  padding-bottom: 8px;
+  text-transform: capitalize;
+  font-weight: 600;
+  border-bottom: 2px solid #aaa;
+  color: #333;
+}
+.trip-similar .trip-post .trip-info h2:nth-of-type(2){
+  text-align: right;
+  margin-right: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 12px;
+}
+.trip-similar .trip-post .trip-info h4{
+  float: left;
+  width: 47%;
+  margin: 0 12px 8px 0;
+  text-transform: capitalize;
+  font-weight: 600;
+  border: 2px solid var(--main-color);
+  border-radius: 8px;
+}
+.trip-similar .trip-post .trip-info h4 span{
+  background-color: var(--main-color);
+  color: #eee;
+  margin-right: 10px;
+  width: 40%;
+  padding: 5px 8px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+}
+.trip-similar .trip-post .trip-info h4 span i{
+  margin-right: 5px;
+}
+/* End Trip Similar */

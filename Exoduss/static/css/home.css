@@ -1,0 +1,1115 @@
+/* Start Login, Signup Forms */
+
+.modal .modal-contentlogin{
+  border-radius: 5px ;
+  background: linear-gradient(to bottom,  #4561ab 0%, #669999 100%);
+  width:fit-content;
+  height:fit-content;
+  box-sizing: border-box;
+  position:fixed;
+  top:25%;
+  left:35%;
+  width:30%;
+}
+.modal p{
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.modal input [type=text],
+.modal input [type=password]{
+  width: 100%;
+  padding:12px 20px;
+  margin: 8px;
+  display: inline-block;
+  border:1px solid #ccc;
+  box-sizing: border-box;
+}
+.modal label{
+  font-size: 20px;
+  color: darkgrey;
+}
+.modal .rm{
+  margin:8px ;
+  font-size: 15px;
+}
+.modal .psw{
+  font-size: 15px;
+  margin-top: 10px;
+  float: right;
+
+}
+/* Set a style for all buttons */
+.modal button {
+  background-color: inherit;
+  color: white;
+  padding: 15px 25px;
+  margin: 8px 10px;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  right: 25%;
+  top: 1%;
+  font-size: larger;
+  border-radius: 8px;
+}
+.modal button:hover {
+  opacity: 0.8;
+  color: #55afff; /*el loon el maktob beh abl ma 2o2af 3alih*/
+  background-color: rgba(163, 163, 163, 0.28);
+}
+.modal button.active {
+  background-color: rgba(163, 163, 163, 0.28); /*el loon lama bo2af 3alih*/
+  color: #55afff;
+  border-radius:8px;
+}
+.modal .btn{
+  background:linear-gradient(to bottom, #479ed1 0%, #66ccff 100%);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 14px ;
+  border: none;
+  cursor: pointer;
+  width:350px;
+    border-top-right-radius: 0%;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 0%;
+);
+}
+
+.modal .btn:hover {
+  opacity: 0.8;
+  color: white;
+}
+.modal .usercontainer{
+  text-align: center;
+  margin: 15px 0 3px 0;
+  position: relative;
+}
+.modal input{
+  width:98%;
+  height:40px;
+  border-radius:5px;
+  font-size:15px;
+}
+.modal img.avatar{
+  width:30%;
+  border-radius: 50%;
+}
+.modal .container{
+  padding: 16px;
+}
+
+.modal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* el background barra el popup lama btft7 */
+  padding-top: 60px;
+}
+/* Modal Content/Box */
+.modal .modal-content {
+  background: linear-gradient(to bottom,  #4561ab 0%, #669999 100%);
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 35%;
+  height: auto;
+}
+.modal .btnsignup{
+  background:linear-gradient(to bottom, #479ed1 0%, #66ccff 100%);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 40px ;
+  border: none;
+  cursor: pointer;
+  width:350px;
+    border-top-right-radius: 0%;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 0%;
+);
+}
+
+.modal .btnsignup:hover {
+  opacity: 0.8;
+  color: white;
+}
+/* The Close Button (x) */
+.modal .close {
+  position: absolute;
+  right: 25px;
+  top: -15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: black ;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+.modal .form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.modal .animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+.modal .terms{
+  font-size: 15px;
+  margin: 35px;
+  color: black;
+}
+
+/* End Login, Signup Forms */
+
+/* Start Header */
+.header{
+  background-image: url(../photos/header-5.jpg);
+  background-size: cover ;
+  background-position: bottom;
+  position: relative;
+}
+.header .overlay{
+  background-color: #1d1d1dc7
+}
+
+.header .navbar{ /* Start Nav Bar */
+  overflow: hidden;
+  padding-top: 20px;
+}
+.header .navbar .contain > div{
+  float: left;
+  overflow: hidden;
+}
+.header .navbar .contain .logo{
+  width: 50%;
+}
+
+.header .navbar .contain .logo img{
+  height: 55px;
+}
+
+.header .navbar .contain .tabs{
+  width: 50%;
+}
+.header .navbar .contain .tabs ul li{
+  float: left;
+  margin: 4px 2px;
+  width: 19%;
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+}
+.header .navbar .contain .tabs ul .sign_in a{
+  background-color: #fff;
+  color: #55afff;
+  border: 2px solid #3898ec;
+}
+.header .navbar .contain .tabs ul .sign_in a:hover{
+  background-color: var(--main-color);
+  color: #fff;
+}
+.header .navbar .contain .tabs ul li:hover a{
+  background-color: rgba(163, 163, 163, 0.28);
+  color: #55afff;
+}
+.header .navbar .contain .tabs ul li a{
+  font-size: 17px;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 10px 0;
+  width: 100%;
+  display: block;
+  transition: all 0.25s ease-in-out;
+} /* End Nav Bar */
+
+.header .head-title{ /* Start Search Header */
+  text-align: center;
+  display: inline-block;
+  padding: 0px;
+  border-radius: 10px;
+  transition: all 0.25s ease-in-out;
+}
+.header .head-title > div{
+  background-color: rgba(163, 163, 163, 0.28);
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.25s ease-in-out;
+}
+.header .head-title h1{
+  text-transform: capitalize;
+  color: #eee;
+  font-size: 40px;
+  margin: 0;
+}
+.header .head-title p{
+  color: #ccc;
+  margin: 15px 0;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.header .head-title form{
+  position: relative;
+}
+.header .head-title form i{
+  float: left;
+  position: absolute;
+  top: 7px;
+  left: 12px;
+  font-size: 22px;
+  color: #444;
+}
+.header .head-title form input{
+  display: block;
+  width: 100%;
+  padding: 8px 8px 8px 35px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  font-style: italic;
+}
+.header .head-title form button:hover{
+  background: #1869b1;
+}
+.header .head-title form button{
+  margin: 8px 5px 0 0;
+  width: 48.75%;
+  padding: 8px;
+  text-transform: capitalize;
+  font-size: 18px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+.header .head-title form button:nth-of-type(2){
+  margin: 8px 0 0 5px;
+}
+/* End Header */
+
+/* Start Advanced Search */
+.adv-search{
+  background-color: #eee;
+  display: none;
+}
+.adv-search .contain form{
+  text-align: center;
+  border-bottom: 1px solid #bbb;
+}
+.adv-search .contain form input{
+  display: inline-block;
+  width: 40%;
+  border: none;
+  border-radius: 10px;
+  font-style: italic;
+  font-size: 18px;
+  padding: 8px 10px;
+  margin: 15px 10px 0 0;
+  box-shadow: 1px 1px 5px 0px #aaa;
+}
+.adv-search .contain form input:nth-of-type(2){
+  margin: 15px 0 0 10px;
+}
+.adv-search .contain form input:nth-of-type(3){
+  margin: 15px 10px 0 0;
+  height: 36px;
+}
+.adv-search .contain form input:last-of-type{
+  margin: 15px 0 0 10px;
+}
+.adv-search .contain form button:hover{
+  background: #1869b1;
+}
+.adv-search .contain form button{
+  margin: 20px 0;
+  width: 20%;
+  padding: 8px;
+  text-transform: capitalize;
+  font-size: 18px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+/* End Advanced Search */
+
+/* Start Latest Votes */
+.latest-votes{
+  background-color: #eee;
+  padding: 50px 0;
+  overflow: hidden;
+  border-bottom: 1px solid #bbb;
+}
+.latest-votes .outer-head{
+  overflow: hidden;
+  margin-bottom: 20px
+}
+.latest-votes .outer-head h2{
+  text-transform: capitalize;
+  display: inline-block;
+  float: left;
+  text-transform: capitalize;
+  display: inline-block;
+  float: left;
+  border-bottom: 2px solid #333;
+  color: #333;
+  padding: 5px 1px;
+}
+.latest-votes .outer-head .see-more:hover{
+  background: #1869b1;
+}
+.latest-votes .outer-head .see-more{
+  float: right;
+  padding: 8px 15px;
+  text-transform: capitalize;
+  font-size: 17px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+
+.latest-votes .main-vote{
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px 1px #888;
+}
+.latest-votes .main-vote .vote-img{
+  width: 30%;
+  height: 230px;
+  float: left;
+  display: inline-block;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.latest-votes .main-vote .vote-img img{
+  width: 100%;
+  height: 100%;
+}
+.latest-votes .main-vote .vote-img .overlay{
+  display: none;
+  transition: all 0.25s ease-in-out;
+}
+.latest-votes .main-vote .vote-img .overlay .learn-more:hover{
+  background: #1869b1;
+}
+.latest-votes .main-vote .vote-img .overlay .learn-more{
+  float: left;
+  width: 40%;
+  position: relative;
+  top: 100px;
+  left: 100px;
+  padding: 10px 15px;
+  text-transform: capitalize;
+  font-size: 17px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+.latest-votes .main-vote:hover .overlay{
+    display: inline-block;
+}
+.latest-votes .main-vote .vote-info{
+  display: inline-block;
+  float: left;
+  width: 70%;
+}
+.latest-votes .main-vote .vote-info .inner-head{
+  overflow: hidden;
+  margin: 20px;
+}
+.latest-votes .main-vote .vote-info .inner-head h3{
+  float: left;
+  text-transform: capitalize;
+  border-bottom: 2px solid #333;
+  padding: 5px 1px;
+  color: #333;
+}
+.latest-votes .main-vote .vote-info .inner-head h3:nth-of-type(2){
+  float: right;
+}
+.latest-votes .main-vote .vote-info p{
+  margin: 0 20px;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.5;
+}
+.latest-votes .main-vote .vote-info span{
+  text-transform: capitalize;
+  float: left;
+  color: #eee;
+  font-size: 17px;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 10%;
+  max-width: 90%;
+  width: 70%;
+  margin-top: 20px;
+  padding: 10px 10px;
+  background: #09ad09;
+  position: relative;
+  bottom: -26px;
+}
+.latest-votes .main-vote .vote-info span:nth-of-type(2){
+  background: #d00303;
+  width: 30%;
+  text-align: right;
+}
+.latest-votes .main-vote .vote-info span i{
+  margin: 0 10px;
+}
+/* End Latest Votes */
+
+/* Start Most Booking Trips */
+.most-going{
+  padding: 50px 0;
+  overflow: hidden;
+}
+.most-going .outer-head{
+  overflow: hidden;
+  padding: 20px 2px;
+}
+.most-going .outer-head h2{
+  text-transform: capitalize;
+  display: inline-block;
+  float: left;
+  text-transform: capitalize;
+  display: inline-block;
+  float: left;
+  border-bottom: 2px solid #333;
+  color: #333;
+  padding: 5px 1px;
+}
+.most-going .outer-head .see-more:hover{
+  background: #1869b1;
+}
+.most-going .outer-head .see-more{
+  float: right;
+  padding: 8px 15px;
+  text-transform: capitalize;
+  font-size: 17px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+
+.most-going .cards .trip-card{
+  float: left;
+  width: 24%;
+  overflow: hidden;
+  background: var(--main-color);
+  color: #eee;
+  margin-right: 14.6px;
+  position: relative;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0px -2px 10px 0px #bbb;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.most-going .cards .trip-card:last-of-type{
+  margin-right: 0;
+}
+.most-going .cards .active{
+  background-color: #eee;
+  color: #333;
+}
+.most-going .cards .trip-card img{
+  width: 100%;
+  height: 180px;
+  padding: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.most-going .cards .trip-card .expand{
+  overflow: hidden;
+  padding: 0 15px 8px 15px;
+}
+.most-going .cards .trip-card .expand h4{
+  text-transform: capitalize;
+  width: 80%;
+  float: left;
+  font-size: 18px;
+}
+.most-going .cards .trip-card .expand i{
+  width: 20%;
+  float: left;
+  text-align: right;
+}
+
+.most-going .extention{
+  overflow: hidden;
+  background-color: #eee;
+  padding: 0 150px;
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #888;
+  display: none;
+}
+.most-going .active{
+  display: inline-block;
+}
+.most-going .extention .stats{
+  overflow: hidden;
+  margin-top: 30px;
+  border-bottom: 1px solid #999;
+  padding: 0 2px 10px 2px;
+}
+.most-going .extention .stats span{
+  text-transform: capitalize;
+  float: left;
+  width: 15%;
+  text-align: left;
+  font-weight: 500;
+  font-size: 17px;
+  color: #555;
+}
+.most-going .extention .stats span i{
+  margin-right: 8px;
+}
+.most-going .extention .stats span:hover{
+  color: var(--main-color);
+}
+.most-going .extention .stats h4{
+  text-transform: capitalize;
+  color: #333;
+  float: left;
+  width: 20%;
+  float: left;
+  text-align: right;
+  font-size: 18px;
+  margin-left: 50%;
+}
+.most-going .extention img{
+  width: 100%;
+  height: 350px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0px 0px 10px 1px #888;
+}
+.most-going .extention p{
+  font-weight: 500;
+  font-size: 17px;
+  color: #555;
+  line-height: 1.5;
+  padding-top: 10px;
+  border-top: 1px solid #999;
+}
+.most-going .extention .learn-more{
+  padding: 10px 15px;
+  text-transform: capitalize;
+  font-size: 17px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  margin: 20px 0;
+  transition: all 0.25s ease-in-out;
+}
+.most-going .extention .learn-more:hover{
+  background: #1869b1;
+}
+/* End Most Booking Trips */
+
+/* Start Most Followed Agencies */
+.most-followed{
+  padding: 20px 0;
+  overflow: hidden;
+  background-color: #eee;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+}
+.most-followed .outer-head{
+  overflow: hidden;
+  padding: 20px 2px;
+}
+.most-followed .outer-head h2{
+  text-transform: capitalize;
+  display: inline-block;
+  float: left;
+  text-transform: capitalize;
+  display: inline-block;
+  float: left;
+  border-bottom: 2px solid #333;
+  color: #333;
+  padding: 5px 1px;
+}
+.most-followed .outer-head .see-more:hover{
+  background: #1869b1;
+}
+.most-followed .outer-head .see-more{
+  float: right;
+  padding: 8px 15px;
+  text-transform: capitalize;
+  font-size: 17px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+
+.most-followed .agencies .agency-card{
+  float: left;
+  width: 20%;
+  padding: 10px;
+  text-align: center;
+  transition: all 0.25s ease-in-out;
+}
+.most-followed .agencies .agency-card:hover{
+  background: #ddd;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 0 #aaa;
+}
+.most-followed .agencies .agency-card img{
+  border-radius: 50%;
+  width: 100%;
+  height: 200px;
+  box-shadow: 0px 0px 10px 0px #bbb;
+  margin-bottom: 15px;
+  cursor: pointer;
+  opacity: .6;
+  transition: all 0.25s ease-in-out;
+}
+.most-followed .agencies .agency-card:hover img{
+  box-shadow: 0px 0px 10px 0px #888;
+  opacity: 1;
+}
+.most-followed .agencies .agency-card h3{
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+.most-followed .agencies .agency-card .follow-btn:hover{
+  background: #1869b1;
+  box-shadow: 0px 0px 10px 1px #888;
+}
+.most-followed .agencies .agency-card .follow-btn{
+  background: var(--main-color);
+  border-radius: 5px;
+  padding: 5px;
+  display: inline-block;
+  transition: all 0.25s ease-in-out;
+}
+.most-followed .agencies .agency-card .follow-btn span{
+  font-weight: 600;
+  color: #eee;
+  font-size: 16px;
+  border-right: 1px solid #eee;
+  padding: 0 8px 0 4px;
+}
+.most-followed .agencies .agency-card .follow-btn button{
+  font-weight: 600;
+  background: transparent;
+  color: #eee;
+  border: none;
+  font-size: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+/* End Most Followed Agencies */
+
+/* Start Most Booking Trips */
+.recent-trips{
+  padding: 50px 0;
+  overflow: hidden;
+}
+.recent-trips .outer-head{
+  overflow: hidden;
+  padding: 20px 2px;
+}
+.recent-trips .outer-head h2{
+  text-transform: capitalize;
+  display: inline-block;
+  float: left;
+  text-transform: capitalize;
+  display: inline-block;
+  float: left;
+  border-bottom: 2px solid #333;
+  color: #333;
+  padding: 5px 1px;
+}
+.recent-trips .outer-head .see-more:hover{
+  background: #1869b1;
+}
+.recent-trips .outer-head .see-more{
+  float: right;
+  padding: 8px 15px;
+  text-transform: capitalize;
+  font-size: 17px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+
+.recent-trips .cards .trip-card{
+  float: left;
+  width: 24%;
+  overflow: hidden;
+  background: var(--main-color);
+  color: #eee;
+  margin-right: 14.6px;
+  position: relative;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0px -2px 10px 0px #888;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.recent-trips .cards .trip-card:last-of-type{
+  margin-right: 0;
+}
+.recent-trips .cards .active{
+  background-color: #eee;
+  color: #333;
+}
+.recent-trips .cards .trip-card img{
+  width: 100%;
+  height: 180px;
+  padding: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.recent-trips .cards .trip-card .expand{
+  overflow: hidden;
+  padding: 0 15px 8px 15px;
+}
+.recent-trips .cards .trip-card .expand h4{
+  text-transform: capitalize;
+  width: 80%;
+  float: left;
+  font-size: 18px;
+}
+.recent-trips .cards .trip-card .expand i{
+  width: 20%;
+  float: left;
+  text-align: right;
+}
+
+.recent-trips .extention{
+  overflow: hidden;
+  background-color: #eee;
+  padding: 0 150px;
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #888;
+  display: none;
+}
+.recent-trips .active{
+  display: inline-block;
+}
+.recent-trips .extention .stats{
+  overflow: hidden;
+  margin-top: 30px;
+  border-bottom: 1px solid #999;
+  padding: 0 2px 10px 2px;
+}
+.recent-trips .extention .stats span{
+  text-transform: capitalize;
+  float: left;
+  width: 15%;
+  text-align: left;
+  font-weight: 500;
+  font-size: 17px;
+  color: #555;
+}
+.recent-trips .extention .stats span i{
+  margin-right: 8px;
+}
+.recent-trips .extention .stats span:hover{
+  color: var(--main-color);
+}
+.recent-trips .extention .stats h4{
+  text-transform: capitalize;
+  color: #333;
+  float: left;
+  width: 20%;
+  float: left;
+  text-align: right;
+  font-size: 18px;
+  margin-left: 50%;
+}
+.recent-trips .extention img{
+  width: 100%;
+  height: 350px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0px 0px 10px 1px #888;
+}
+.recent-trips .extention p{
+  font-weight: 500;
+  font-size: 17px;
+  color: #555;
+  line-height: 1.5;
+  padding-top: 10px;
+  border-top: 1px solid #999;
+}
+.recent-trips .extention .learn-more{
+  padding: 10px 15px;
+  text-transform: capitalize;
+  font-size: 17px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  margin: 20px 0;
+  transition: all 0.25s ease-in-out;
+}
+.recent-trips .extention .learn-more:hover{
+  background: #1869b1;
+}
+/* End Most Booking Trips */
+
+/* Start Footer */
+.footer{
+  overflow: hidden;
+  background: #eee;
+  border-top: 1px solid #bbb;
+}
+.footer .slogan{
+  float: left;
+  width: 33.33%;
+}
+.footer .slogan h2{
+  text-transform: capitalize;
+  text-align: center;
+  width: 28%;
+  padding: 5px;
+  margin: 5px auto;
+  color: #333;
+  font-size: 26px;
+  border-bottom: 2px solid #333;
+}
+.footer .slogan p{
+  font-weight: 500;
+  line-height: 1.7;
+  color: #555;
+  text-align: center;
+  margin: 10px;
+  padding: 0 15px;
+}
+
+.footer .contact{
+  float: left;
+  width: 33.33%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px #bbb;
+  padding-bottom: 30px;
+}
+.footer .contact h2{
+  text-transform: capitalize;
+  text-align: center;
+  width: 40%;
+  padding: 5px;
+  margin: 5px auto 18px;
+  color: #333;
+  font-size: 26px;
+  border-bottom: 2px solid #333;
+}
+.footer .contact div{
+  margin-top: 12px;
+  overflow: hidden;
+  padding: 0 25px;
+}
+.footer .contact span{
+  font-weight: 500;
+  text-transform: capitalize;
+  background: var(--main-color);
+  padding: 5px;
+  display: inline-block;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+  color: #eee;
+}
+.footer .contact .whats span{
+  background-color: #24c42e;
+}
+.footer .contact .email span{
+  background-color: #8223b6;
+}
+.footer .contact p{
+  font-weight: 700;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.footer .links{
+  float: left;
+  width: 33.33%;
+  text-align: center;
+}
+.footer .links h2{
+  text-transform: capitalize;
+  text-align: center;
+  width: 22%;
+  padding: 5px;
+  margin: 5px auto;
+  color: #333;
+  font-size: 26px;
+  border-bottom: 2px solid #333;
+}
+.footer .links a{
+  margin: 7px 5px 3px;
+  overflow: hidden;
+  display: inline-block;
+}
+.footer .links a i{
+  color: #999;
+  font-size: 35px;
+  transition: all 0.25s ease-in-out;
+}
+.footer .links a .fa-facebook-square:hover{
+  color: #4267b2;
+}
+.footer .links a .fa-twitter-square:hover{
+  color: #1da1f3;
+}
+.footer .links .app{
+  margin: 10px auto;
+  width: 265px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  box-shadow: 0px 0px 10px 0px #aaa;
+  overflow: hidden;
+  transition: all 0.15s ease-in-out;
+}
+.footer .links .app:hover{
+  border-color: #a4c639;
+  box-shadow: none;
+}
+.footer .links .app a{
+  margin: 0;
+  padding: 5px;
+}
+.footer .links .app a i{
+  font-size: 50px;
+  float: left;
+  color: #a4c639;
+}
+.footer .links .app a h3{
+  display: inline-block;
+  text-transform: capitalize;
+  margin-left: 8px;
+  float: right;
+  margin-top: 15px;
+  color: #333;
+}
+
+/* End Footer */
+
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+/* Generals */
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{ /* Variables */
+  --main-color: #3898ec;
+  --hover-color: #1869b1;
+  font-family: 'Exo 2', Arial, Tahoma;
+}
+
+.contain{
+  margin: 0 auto;
+  width: 1100px;
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #1d1d1d80;
+}
+
+.clear{
+  clear: both;
+}
+
+input, button:focus{
+  outline: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+  overflow: hidden;
+}

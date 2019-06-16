@@ -1,0 +1,246 @@
+
+.header .head-title{ /* Start Search Header */
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+  background-color: rgba(163, 163, 163, 0.28);
+}
+.header .head-title h1{
+  text-transform: capitalize;
+  color: #eee;
+  font-size: 40px;
+  padding: 0 20px;
+  border-radius: 15px;
+  margin: 10px 0;
+}
+/* End Header */
+
+/* Start Filter */
+.filter{
+  float: left;
+  width: 25%;
+  background: #eee;
+  box-shadow: 0px 0px 10px 0px #bbb;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+.filter h2{
+  text-transform: capitalize;
+  text-align: center;
+  padding: 8px;
+  color: #eee;
+  font-weight: 600;
+  margin: 2px 2px 0 2px;
+  background: var(--main-color);
+  border-radius: 10px 10px 0 0;
+}
+.filter form{
+  padding: 0 7px;
+}
+.filter form label{
+  display: block;
+  margin: 15px 0 5px 5px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #333;
+}
+.filter form input{
+  width: 49%;
+  padding: 6px;
+  font-weight: 500;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0px 0px 10px 0px #bbb;
+}
+.filter form .half{
+  width: 100%;
+}
+.filter form select{
+  width: 49%;
+  padding: 6px;
+  font-weight: 500;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0px 0px 10px 0px #bbb;
+}
+.filter form select option{
+  font-weight: 500;
+}
+
+.filter button{
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px 0;
+  border: 2px solid #eee;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  background: var(--main-color);
+  font-weight: 500;
+  font-size: 19px;
+  color: #eee;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.filter button i{
+  margin-right: 10px;
+  font-size: 17px;
+}
+.filter button:hover{
+  background-color: #1869b1;
+}
+/* End Filter */
+
+/* Start Sort*/
+.trips .sort{
+  margin-top: 10px;
+}
+.trips .sort select{
+  width: 24%;
+  margin-right: 2%;
+  padding: 6px;
+  font-weight: 500;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0px 0px 10px 0px #bbb;
+}
+.trips .sort select option{
+  font-weight: 500;
+}
+.trips .sort button{
+  width: 20%;
+  margin-left: 2%;
+  padding: 8px 12px;
+  text-transform: capitalize;
+  font-size: 16px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 600;
+  transition: all 0.25s ease-in-out;
+}
+.trips .sort button:hover{
+  background: #1869b1;
+}
+.trips .sort i{
+  background-color: var(--main-color);
+  color: #eee;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all .20s ease-in-out;
+}
+.trips .sort i:hover{
+  background-color: var(--hover-color);
+  color: #fff
+}
+/* End Sort*/
+
+/* Start Trips */
+.trips{
+  float: left;
+  width: 72%;
+  margin-left: 3%;
+  overflow: hidden;
+  padding: 0 20px;
+  background: #eee;
+  box-shadow: 0px 0px 10px 0px #bbb;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+.trips .trip-post{
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #aaa;
+  margin: 20px 0;
+}
+.trips .trip-post .trip-img{
+  width: 35%;
+  height: 180px;
+  float: left;
+  display: inline-block;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.trips .trip-post .trip-img img{
+  width: 100%;
+  height: 100%;
+}
+.trips .trip-post .trip-img .overlay{
+  display: none;
+  transition: all 0.25s ease-in-out;
+}
+.trips .trip-post:hover .overlay{
+  display: inline-block;
+}
+.trips .trip-post .trip-img .overlay .learn-more{
+  float: left;
+  position: relative;
+  top: 80px;
+  left: 75px;
+  padding: 8px 12px;
+  text-transform: capitalize;
+  font-size: 16px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+.trips .trip-post .trip-img .overlay .learn-more:hover{
+  background: #1869b1;
+}
+
+.trips .trip-post .trip-info{
+  float: left;
+  width: 65%;
+  padding-left: 20px;
+}
+.trips .trip-post .trip-info h2{
+  float: left;
+  width: 48%;
+  margin: 10px 0;
+  padding-bottom: 8px;
+  text-transform: capitalize;
+  font-weight: 600;
+  border-bottom: 2px solid #aaa;
+  color: #333;
+}
+.trips .trip-post .trip-info h2:nth-of-type(2){
+  text-align: right;
+  margin-right: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 12px;
+}
+.trips .trip-post .trip-info h4{
+  float: left;
+  width: 47%;
+  margin: 0 12px 8px 0;
+  text-transform: capitalize;
+  font-weight: 600;
+  border: 2px solid var(--main-color);
+  border-radius: 8px;
+}
+.trips .trip-post .trip-info h4 span{
+  background-color: var(--main-color);
+  color: #eee;
+  margin-right: 10px;
+  width: 40%;
+  padding: 5px 8px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+}
+.trips .trip-post .trip-info h4 span i{
+  margin-right: 5px;
+}
+/* End Trips */
