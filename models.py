@@ -137,7 +137,7 @@ class Follows(models.Model):
         unique_together = (('user', 'agency'),)
 
 
-class Phones(models.Model):
+class Phones(models.Model): 
     agency = models.ForeignKey(Agencies, models.DO_NOTHING, db_column='Agency_id', primary_key=True)  # Field name made lowercase.
     phone = models.CharField(max_length=13)
 

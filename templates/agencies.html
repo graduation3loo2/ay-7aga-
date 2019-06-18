@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/exo-2.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{%  static 'css/agencies.css' %}">
+
   </head>
   <body>
 
@@ -108,72 +109,31 @@
 
     <div class="contain">
       <!-- Start Agencies -->
+
       <div class="agencies">
         <div class="search-vote">
-          <input type="text" name="" value="" placeholder="Search In Agencies...">
-          <button type="button" name="button">search</button>
+            <form method='GET' action=''>
+                    <input type="text" name="q" value="{{ request.GET.q }}" placeholder="Search In Agencies...">
+                    <button type="submit" value="Search">search</button>
+            </form>
         </div>
-        <div class="clear"></div>
+          <div class="clear"></div>
 
-        <div class="agency-card">
-          <img src="{% static 'photos/others/agency-1.jpg' %}" alt="">
-          <h3>roca travel</h3>
-          <div class="follow-btn">
-            <span>150</span>
-            <button class="follow" type="button" name="button">follow</button>
-          </div>
-        </div>
-        <div class="agency-card">
-          <img src="{% static 'photos/others/agency-2.jpg' %}" alt="">
-          <h3>lucky tour</h3>
-          <div class="follow-btn">
-            <span>135</span>
-            <button class="follow" type="button" name="button">follow</button>
-          </div>
-        </div>
-        <div class="agency-card">
-          <img src="{% static 'photos/others/agency-3.jpg' %}" alt="">
-          <h3>cairo overland</h3>
-          <div class="follow-btn">
-            <span>120</span>
-            <button class="follow" type="button" name="button">follow</button>
-          </div>
-        </div>
-        <div class="agency-card">
-          <img src="{% static 'photos/others/agency-4.gif' %}" alt="">
-          <h3>city link</h3>
-          <div class="follow-btn">
-            <span>105</span>
-            <button class="follow" type="button" name="button">follow</button>
-          </div>
-        </div>
-        <div class="agency-card">
-          <img src="{% static 'photos/others/agency-1.jpg' %}" alt="">
-          <h3>roca travel</h3>
-          <div class="follow-btn">
-            <span>150</span>
-            <button class="follow" type="button" name="button">follow</button>
-          </div>
-        </div>
-        <div class="agency-card">
-          <img src="{% static 'photos/others/agency-2.jpg' %}" alt="">
-          <h3>lucky tour</h3>
-          <div class="follow-btn">
-            <span>135</span>
-            <button class="follow" type="button" name="button">follow</button>
-          </div>
-        </div>
-        <div class="agency-card">
-          <img src="{% static 'photos/others/agency-3.jpg' %}" alt="">
-          <h3>cairo overland</h3>
-          <div class="follow-btn">
-            <span>120</span>
-            <button class="follow" type="button" name="button">follow</button>
-          </div>
-        </div>
+          {% for x in agens %}
+                      <div class="agency-card">
+                          <img src="{{ x.photo_url }}" alt="">
+                          <h3> {{ x.name }}</h3>
+                      <form method='GET' action=''>
+                        <div class="follow-btn">
+                            <span>{{x.follows_set.count}}</span>
+                            <button class="follow" type="submit" name="btnFollow" value="{{ x.agency_id }}" >follow"</button>
+                        </div>
+                      </form>
+                      </div>
+          {% endfor %}
 
-      </div>
-      <!-- End Agencies -->
+          <!-- End Agencies -->
+         </div>
     </div>
 
     <div class="clear"></div>

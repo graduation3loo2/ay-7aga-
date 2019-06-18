@@ -26,3 +26,22 @@ class Phones(models.Model):
         db_table = 'phones'
         unique_together = (('agency', 'phone'),)
 
+class Users(models.Model):
+    user_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+    phone = models.CharField(max_length=11, blank=True, null=True)
+    city = models.CharField(max_length=45)
+
+    class Meta:
+        managed = False
+        db_table = 'users'
+
+class Follows(models.Model):
+    user = models.ForeignKey('Users', models.DO_NOTHING, primary_key=True)
+    agency = models.ForeignKey(Agencies, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'follows'
+        unique_together = (('user', 'agency'),)

@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'trips.apps.TripsConfig',
     'user.apps.UserConfig',
     'votes.apps.VotesConfig',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
