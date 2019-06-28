@@ -108,54 +108,29 @@
 
     <div class="contain">
       <!-- Start Votes -->
-      <div class="votes">
-        <div class="main-vote">
-          <div class="vote-img">
-            <img src="{% static 'photos/header-10.jpg' %}" alt="">
-            <div class="overlay">
-              <button class="learn-more" type="button" name="button">learn more</button>
-            </div>
-          </div>
-          <div class="vote-info">
-            <div class="inner-head">
-              <h3>pyramids of giza</h3>
-              <h3>roca travel</h3>
-            </div>
-            <div class="clear"></div>
-            <p>This website helps you choose a trip that suits you from a variety of options
-              in an easy and simple way that simplifies your options this website helps you
-              choose a trip that suits you from a variety of options
-              in an easy and simple way that simplifies your options.</p>
-              <span class="interested">70<i class="fas fa-thumbs-up"></i></span>
-              <span class="notinterested">30<i class="fas fa-thumbs-down"></i></span>
-            <div class="clear"></div>
-          </div>
-        </div>
 
-        <div class="main-vote">
-          <div class="vote-img">
-            <img src="{% static 'photos/header-11.jpg' %}" alt="">
-            <div class="overlay">
-              <button class="learn-more" type="button" name="button">learn more</button>
+        <div class="votes">
+            {% for vote in votes_all %}
+             <div class="main-vote">
+            <div class="vote-img">
+            <img src="{{ vote.photo_url }}" alt="">
             </div>
-          </div>
-          <div class="vote-info">
+            <div class="vote-info">
             <div class="inner-head">
-              <h3>wady el-natroon</h3>
-              <h3>lucky tour</h3>
+            <h3>{{ vote.name }}</h3>
+            <h3>{{ vote.agency.name }}</h3>
             </div>
             <div class="clear"></div>
-            <p>This website helps you choose a trip that suits you from a variety of options
-              in an easy and simple way that simplifies your options this website helps you
-              choose a trip that suits you from a variety of options
-              in an easy and simple way that simplifies your options.</p>
-              <span class="interested">60<i class="fas fa-thumbs-up"></i>interested</span>
-              <span class="notinterested">40<i class="fas fa-thumbs-down"></i>not interested</span>
+            <p>{{ vote.description }}</p>
+              <button class="interested x" type="button"><i class="fas fa-thumbs-up"></i></button>
+              <button class="notinterested y" type="button"><i class="fas fa-thumbs-down"></i></button>
+            <div class="clear"></div>
+            </div>
             <div class="clear"></div>
           </div>
-        </div>
+            {% endfor %}
 
-      </div>
+        </div>
       <!-- End Votes -->
     </div>
 

@@ -13,7 +13,11 @@ SECRET_KEY = '6=fe(=e!_@^k@qsu8i8e&($(^is%p1xv5ima4(j-ar#^d6!%_!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    '10.0.2.2',
+]
 
 STATICFILES_DIRS = [
     os.path.join(os.path.dirname(__file__), 'static'),
@@ -37,8 +41,13 @@ INSTALLED_APPS = [
     'trips.apps.TripsConfig',
     'user.apps.UserConfig',
     'votes.apps.VotesConfig',
-    'django_filters'
+    'singup.apps.SingupConfig',
+    'django_filters',
+    'rest_framework',
+    'mathfilters'
 ]
+
+ENCRYPT_KEY = b'83AkVlvibmDsjcFUf-KxxkfOSPNI8FbD1B1yTGs7hSM='
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Exodus',
         'USER': 'root',
-        'PASSWORD': 'Root.Root',
+        'PASSWORD': '456645rtyyrt$%^^$%VBNNVB',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -124,3 +133,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+}

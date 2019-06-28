@@ -1,20 +1,4 @@
 
-.header .head-title{ /* Start Search Header */
-  text-align: center;
-  display: inline-block;
-  border-radius: 10px;
-  background-color: rgba(163, 163, 163, 0.28);
-}
-.header .head-title h1{
-  text-transform: capitalize;
-  color: #eee;
-  font-size: 40px;
-  padding: 0 20px;
-  border-radius: 15px;
-  margin: 10px 0;
-}
-/* End Header */
-
 /* Start Filter */
 .filter{
   float: left;
@@ -22,7 +6,7 @@
   background: #eee;
   box-shadow: 0px 0px 10px 0px #bbb;
   margin-top: 30px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .filter h2{
   text-transform: capitalize;
@@ -32,9 +16,9 @@
   font-weight: 600;
   margin: 2px 2px 0 2px;
   background: var(--main-color);
-  border-radius: 10px 10px 0 0;
+  border-radius: 5px 5px 0 0;
 }
-.filter form{
+.filter form div{
   padding: 0 7px;
 }
 .filter form label{
@@ -48,8 +32,7 @@
   width: 49%;
   padding: 6px;
   font-weight: 500;
-  border-radius: 7px;
-  border: none;
+  border-radius: 5px;
   box-shadow: 0px 0px 10px 0px #bbb;
 }
 .filter form .half{
@@ -59,8 +42,7 @@
   width: 49%;
   padding: 6px;
   font-weight: 500;
-  border-radius: 7px;
-  border: none;
+  border-radius: 5px;
   box-shadow: 0px 0px 10px 0px #bbb;
 }
 .filter form select option{
@@ -74,7 +56,7 @@
   padding: 10px 0;
   border: 2px solid #eee;
   border-top: none;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 5px 5px;
   background: var(--main-color);
   font-weight: 500;
   font-size: 19px;
@@ -101,8 +83,7 @@
   margin-right: 2%;
   padding: 6px;
   font-weight: 500;
-  border-radius: 7px;
-  border: none;
+  border-radius: 5px;
   box-shadow: 0px 0px 10px 0px #bbb;
 }
 .trips .sort select option{
@@ -150,11 +131,11 @@
   background: #eee;
   box-shadow: 0px 0px 10px 0px #bbb;
   margin-top: 30px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .trips .trip-post{
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0px 0px 10px 0px #aaa;
   margin: 20px 0;
 }
@@ -163,8 +144,8 @@
   height: 180px;
   float: left;
   display: inline-block;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   overflow: hidden;
   position: relative;
 }
@@ -189,7 +170,7 @@
   font-size: 16px;
   background: var(--main-color);
   border: none;
-  border-radius: 7px;
+  border-radius: 5px;
   cursor: pointer;
   color: #eee;
   font-weight: 500;
@@ -227,8 +208,13 @@
   margin: 0 12px 8px 0;
   text-transform: capitalize;
   font-weight: 600;
+  color: var(--main-color);
   border: 2px solid var(--main-color);
-  border-radius: 8px;
+  border-radius: 5px;
+  transition: all .20s ease-in-out
+}
+.trips .trip-post .trip-info h4:hover{
+  color: var(--main-color);
 }
 .trips .trip-post .trip-info h4 span{
   background-color: var(--main-color);
@@ -238,7 +224,6 @@
   padding: 5px 8px;
   display: inline-block;
   text-align: center;
-  border-radius: 5px;
 }
 .trips .trip-post .trip-info h4 span i{
   margin-right: 5px;

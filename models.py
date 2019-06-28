@@ -14,7 +14,7 @@ class Agencies(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'agencies'
+        db_table = 'Agencies'
 
 
 class AuthGroup(models.Model):
@@ -133,17 +133,17 @@ class Follows(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'follows'
+        db_table = 'Follows'
         unique_together = (('user', 'agency'),)
 
 
-class Phones(models.Model): 
+class Phones(models.Model):
     agency = models.ForeignKey(Agencies, models.DO_NOTHING, db_column='Agency_id', primary_key=True)  # Field name made lowercase.
     phone = models.CharField(max_length=13)
 
     class Meta:
         managed = False
-        db_table = 'phones'
+        db_table = 'Phones'
         unique_together = (('agency', 'phone'),)
 
 
@@ -155,7 +155,7 @@ class Reports(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'reports'
+        db_table = 'Reports'
 
 
 class Response(models.Model):
@@ -165,7 +165,7 @@ class Response(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'response'
+        db_table = 'Response'
         unique_together = (('vote', 'user'),)
 
 
@@ -175,7 +175,7 @@ class TripPhotos(models.Model):
 
     class Meta:
         managed = False
-        db_table = "trip_photos'"
+        db_table = "Trip_photos'"
 
 
 class Trips(models.Model):
@@ -195,7 +195,7 @@ class Trips(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'trips'
+        db_table = 'Trips'
 
 
 class Users(models.Model):
@@ -204,18 +204,40 @@ class Users(models.Model):
     password = models.CharField(max_length=50)
     phone = models.CharField(max_length=11, blank=True, null=True)
     city = models.CharField(max_length=45)
+    photo_url = models.TextField(blank=True, null=True)
+    e_mail = models.CharField(db_column='e-mail', max_length=45, blank=True, null=True)
 
     class Meta:
         managed = False
-        db_table = 'users'
+        db_table = 'Users'
 
+
+class GoingTo(models.Model):
+    user = models.ForeignKey(Users, models.DO_NOTHING, db_column='User_id', primary_key=True)  # Field name made lowercase.
+    trip = models.ForeignKey(Trips, models.DO_NOTHING, db_column='Trip_id')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'going_to'
+        unique_together = (('user', 'trip'),)
+
+
+class Saved(models.Model):
+    user = models.ForeignKey(Users, models.DO_NOTHING, db_column='User_id', primary_key=True)  # Field name made lowercase.
+    trip = models.ForeignKey(Trips, models.DO_NOTHING, db_column='Trip_id')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'saved'
+        unique_together = (('user', 'trip'),)
 
 class Vote(models.Model):
     vote_id = models.AutoField(db_column='Vote_id', primary_key=True)  # Field name made lowercase.
     agency = models.ForeignKey(Agencies, models.DO_NOTHING, db_column='Agency_id')  # Field name made lowercase.
     name = models.CharField(db_column='Name', max_length=45)  # Field name made lowercase.
     description = models.TextField(db_column='Description')  # Field name made lowercase.
+    photo_url = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
-        db_table = 'vote'
+        db_table = 'Vote'

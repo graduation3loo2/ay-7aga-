@@ -1,181 +1,141 @@
+
 /* Start Login, Signup Forms */
-.modal .modal-contentlogin{
-  border-radius: 5px ;
-  background: linear-gradient(to bottom,  #4561ab 0%, #669999 100%);
-  width:fit-content;
-  height:fit-content;
-  box-sizing: border-box;
-  position:fixed;
-  top:25%;
-  left:35%;
-  width:30%;
-}
-.modal p{
-  color: white;
-  font-size: 30px;
-  text-align: center;
-}
-.modal input [type=text],
-.modal input [type=password]{
-  width: 100%;
-  padding:12px 20px;
-  margin: 8px;
-  display: inline-block;
-  border:1px solid #ccc;
-  box-sizing: border-box;
-}
-.modal label{
-  font-size: 20px;
-  color: darkgrey;
-}
-.modal .rm{
-  margin:8px ;
-  font-size: 15px;
-}
-.modal .psw{
-  font-size: 15px;
-  margin: 20px 0;
-  float: right;
-
-}
-/* Set a style for all buttons */
-.modal button {
-  background-color: inherit;
-  color: white;
-  padding: 15px 25px;
-  margin: 8px 10px;
-  border: none;
-  cursor: pointer;
-  width: auto;
-  right: 25%;
-  top: 1%;
-  font-size: larger;
-  border-radius: 8px;
-}
-.modal button:hover {
-  opacity: 0.8;
-  color: #55afff; /*el loon el maktob beh abl ma 2o2af 3alih*/
-  background-color: rgba(163, 163, 163, 0.28);
-}
-.modal button.active {
-  background-color: rgba(163, 163, 163, 0.28); /*el loon lama bo2af 3alih*/
-  color: #55afff;
-  border-radius:8px;
-}
-.modal .btn{
-  background:linear-gradient(to bottom, #479ed1 0%, #66ccff 100%);
-  color: white;
-  padding: 14px 20px;
-  margin: 8px auto;
-  display: block;
-  border: none;
-  cursor: pointer;
-  width:350px;
-  border-radius: 10px;
-}
-
-.modal .btn:hover {
-  opacity: 0.8;
-  color: white;
-}
-.modal .usercontainer{
-  text-align: center;
-  margin: 15px 0 3px 0;
-  position: relative;
-}
-.modal input{
-  width:98%;
-  height:40px;
-  border-radius:5px;
-  font-size:15px;
-}
-.modal img.avatar{
-  width:30%;
-  border-radius: 50%;
-}
-.modal .container{
-  padding: 16px;
-}
-
 .modal{
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 999; /* Sit on top */
-  left: 0;
+  display: none;
+  position: fixed;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.4); /* el background barra el popup lama btft7 */
-  padding-top: 60px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: auto;
+  background-color: #0009;
+  z-index: 99;
 }
-/* Modal Content/Box */
-.modal .modal-content {
+.modal form{
+  width: 40%;
+  overflow: hidden;
   background: linear-gradient(to bottom,  #4561ab 0%, #669999 100%);
-  margin: 5% auto 15% auto;
-  border: 1px solid #888;
-  width: 35%;
-  height: auto;
+  margin: 50px auto;
+  padding: 15px 25px;
+  border-radius: 5px;
+  animation: animatezoom .5s linear;
 }
-.modal .btnsignup{
-  background:linear-gradient(to bottom, #479ed1 0%, #66ccff 100%);
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 40px ;
-  border: none;
-  cursor: pointer;
-  width:350px;
-  border-radius: (10px 0%);
+.modal form .form-head{
+  position: relative;
+  overflow: hidden;
 }
-
-.modal .btnsignup:hover {
-  opacity: 0.8;
-  color: white;
+.modal form .form-head h2{
+  text-transform: capitalize;
+  font-weight: 500;
+  color: #eee;
+  margin: 20px 0;
+  text-align: center;
 }
-/* The Close Button (x) */
-.modal .close {
+.modal form .form-head i{
   position: absolute;
-  right: 25px;
-  top: -15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: black ;
-}
-
-.modal .close:hover,
-.modal .close:focus {
-  color: #f44336;
+  top: 20px;
+  right: 5px;
+  font-size: 25px;
+  transition: all .20s ease-in-out;
   cursor: pointer;
+  overflow: hidden;
+  color: #eee;
+}
+.modal form .form-head i:hover{
+  color: #e00;
+}
+.modal form .form-mid{
+  overflow: hidden;
+}
+.modal form .form-mid label{
+  width: 100%;
+  display: block;
+  margin: 5px 0;
+  padding: 0 5px;
+  text-transform: capitalize;
+  color: #eee;
+  font-size: 19px;
+}
+.modal form .form-mid input, textarea{
+  width: 100%;
+  display: block;
+  padding: 8px 5px;
+  margin: 15px 0;
+  color: #555;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.modal form .form-mid span{
+  margin: 15px 0;
+  text-transform: capitalize;
+  display: inline-block;
+  color: #222;
+}
+.modal form .form-mid span.terms{
+  width: 100%;
+  text-align: center;
+}
+.modal form .form-mid span.remember{
+  text-align: left;
+  width: 47.5%;
+  margin-left: 2%
+}
+.modal form .form-mid span.forgot{
+  text-align: right;
+  width: 47.5%;
+  margin-right: 2%;
+}
+.modal form .form-mid span input{
+  width: 18px;
+  height: 18px;
+  display: inline;
+  position: relative;
+  top: 3px;
+  margin: 0 5px 0 0;
+}
+.modal form .form-mid span a{
+  text-decoration: underline;
+  color: #222;
+}
+.modal form .form-foot{
+  overflow: hidden;
+}
+.modal form .form-foot button{
+  width: 60%;
+  display: block;
+  padding: 8px 0;
+  margin: 10px auto;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #eee;
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .20s ease-in-out;
+}
+.modal form .form-foot button:hover{
+  background-color: #fff;
+  color: var(--main-color);
+}
+textarea{
+  height: 150px;
 }
 
-.modal .form-container .btn:hover, .open-button:hover {
-  opacity: 1;
+hr{
+  border: 0.5px solid black;
 }
-
-.modal .animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)}
-  to {-webkit-transform: scale(1)}
-}
-
 @keyframes animatezoom {
   from {transform: scale(0)}
   to {transform: scale(1)}
-}
-.modal .terms{
-  font-size: 15px;
-  margin: 35px;
-  color: black;
 }
 /* End Login, Signup Forms */
 
 /* Start Header */
 .header{
-  background-image: url(../photos/header-5.jpg);
+  background-image: url(../photos/header-2.jpg);
   background-size: cover;
   background-position: bottom;
   position: relative;
@@ -197,7 +157,7 @@
 }
 
 .header .navbar .contain .logo img{
-  height: 55px;
+  height: 40px;
 }
 
 .header .navbar .contain .tabs{
@@ -212,14 +172,22 @@
   cursor: pointer;
 }
 .header .navbar .contain .tabs ul .sign_in a{
-  background-color: #fff;
-  color: #55afff;
-  border: 2px solid #3898ec;
-
-}
-.header .navbar .contain .tabs ul .sign_in a:hover{
   background-color: var(--main-color);
   color: #fff;
+  border: 2px solid #3898ec;
+}
+.header .navbar .contain .tabs ul .sign_in a:hover{
+  background-color: #fff;
+  color: #55afff;
+}
+.header .navbar .contain .tabs ul .user_name a{
+  padding: 0;
+}
+.header .navbar .contain .tabs ul .user_name a img{
+  width: 36px;
+}
+.header .navbar .contain .tabs ul .user_name a:hover{
+  background-color: transparent;
 }
 .header .navbar .contain .tabs ul li:hover a{
   background-color: rgba(163, 163, 163, 0.28);
@@ -229,7 +197,7 @@
   font-size: 17px;
   color: #fff;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 2px solid transparent;
   font-weight: 600;
   text-transform: capitalize;
@@ -237,146 +205,197 @@
   width: 100%;
   display: block;
   transition: all 0.25s ease-in-out;
-} /* End Nav Bar */
+}
+/* End Nav Bar */
+
+iframe{
+  width: 100%;
+  display: block;
+  border: none;
+  overflow: hidden;
+  margin: 20px 0;
+}
 
 /* Start Footer */
 .footer{
   overflow: hidden;
-  background: #eee;
+  background: #333;
   border-top: 1px solid #bbb;
-  margin-top: 50px;
+  padding: 10px;
+  margin-top: 10px;
 }
-.footer .slogan{
-  float: left;
-  width: 33.33%;
-}
-.footer .slogan h2{
-  text-transform: capitalize;
-  text-align: center;
-  width: 28%;
-  padding: 5px;
-  margin: 5px auto;
-  color: #333;
-  font-size: 26px;
-  border-bottom: 2px solid #333;
-}
-.footer .slogan p{
-  font-weight: 500;
-  line-height: 1.7;
-  color: #555;
-  text-align: center;
-  margin: 10px;
-  padding: 0 15px;
-}
-
-.footer .contact{
-  float: left;
-  width: 33.33%;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px 0px #bbb;
-  padding-bottom: 30px;
-}
-.footer .contact h2{
-  text-transform: capitalize;
-  text-align: center;
-  width: 40%;
-  padding: 5px;
-  margin: 5px auto 18px;
-  color: #333;
-  font-size: 26px;
-  border-bottom: 2px solid #333;
-}
-.footer .contact div{
-  margin-top: 12px;
-  overflow: hidden;
-  padding: 0 25px;
-}
-.footer .contact span{
-  font-weight: 500;
-  text-transform: capitalize;
-  background: var(--main-color);
-  padding: 5px;
-  display: inline-block;
-  border-radius: 5px;
-  width: 100px;
-  text-align: center;
-  color: #eee;
-}
-.footer .contact .whats span{
-  background-color: #24c42e;
-}
-.footer .contact .email span{
-  background-color: #8223b6;
-}
-.footer .contact p{
-  font-weight: 700;
-  display: inline-block;
-  margin-left: 5px;
-}
-
 .footer .links{
   float: left;
-  width: 33.33%;
-  text-align: center;
-}
-.footer .links h2{
-  text-transform: capitalize;
-  text-align: center;
-  width: 22%;
-  padding: 5px;
-  margin: 5px auto;
-  color: #333;
-  font-size: 26px;
-  border-bottom: 2px solid #333;
+  width: 15%;
+  text-align: left;
+  margin-top: 10px;
 }
 .footer .links a{
-  margin: 7px 5px 3px;
+  margin-right: 15px;
   overflow: hidden;
   display: inline-block;
 }
+.footer .links a:last-of-type{
+  margin-right: 0;
+}
 .footer .links a i{
-  color: #999;
-  font-size: 35px;
+  width: 35px;
+  text-align: center;
+  color: #aaa;
+  font-size: 30px;
   transition: all 0.25s ease-in-out;
 }
-.footer .links a .fa-facebook-square:hover{
+.footer .links a .fa-facebook-f:hover{
   color: #4267b2;
 }
-.footer .links a .fa-twitter-square:hover{
+.footer .links a .fa-twitter:hover{
   color: #1da1f3;
 }
-.footer .links .app{
-  margin: 10px auto;
-  width: 265px;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  box-shadow: 0px 0px 10px 0px #aaa;
-  overflow: hidden;
-  transition: all 0.15s ease-in-out;
+.footer .links a .fa-yahoo:hover{
+  color: #6001d2;
 }
-.footer .links .app:hover{
-  border-color: #a4c639;
-  box-shadow: none;
+
+.footer .copyright{
+  float: left;
+  width: 61%;
+  text-align: center;
+  margin-top: 15px;
 }
-.footer .links .app a{
+.footer .copyright h3{
+  color: #aaa;
+  font-weight: 600;
+}
+.footer .copyright h3 span{
+  color: var(--main-color);
+}
+
+.footer .andro-app{
+  float: left;
+  width: 24%;
+}
+.footer .andro-app .app{
   margin: 0;
-  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #a4c639;
+  overflow: hidden;
+  text-align: center;
 }
-.footer .links .app a i{
+.footer .andro-app .app a{
+  margin: 0;
+  overflow: hidden;
+  display: inline-block;
+}
+.footer .andro-app .app a i{
   font-size: 50px;
   float: left;
   color: #a4c639;
 }
-.footer .links .app a h3{
+.footer .andro-app .app a h3{
   display: inline-block;
   text-transform: capitalize;
   margin-left: 8px;
   float: right;
   margin-top: 15px;
-  color: #333;
+  color: #aaa;
 }
-
 /* End Footer */
+
+/* Start Scroll To Top Button */
+.scroll-top{
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #eee;
+  font-size: 20px;
+  cursor: pointer;
+}
+.scroll-top span{
+  opacity: 0;
+  float: left;
+  background-color: var(--main-color);
+  margin-top: 10px;
+  padding: 4px 10px;
+  border-radius: 15px 0 0 15px;
+  left: 50%;
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+}
+.scroll-top i{
+  padding: 15px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  z-index: 2;
+}
+/* End Scroll To Top Button */
+
+/* ===== Large Laptop & Medium Desktop ===== */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .modal form {width: 50%}
+
+  .header .navbar .contain .logo img {height: 35px;}
+  .header .navbar .contain .tabs ul li {margin: 4px 4px;width: 18%;}
+  .header .navbar .contain .tabs ul li a {font-size: 16px;padding: 8px 0;}
+
+  .footer .links a {margin-right: 5px;}
+  .footer .links a i {font-size: 27px;}
+  .footer .copyright {width: 56%;}
+  .footer .copyright h3 {font-size: 18px;}
+  .footer .andro-app {width: 29%;}
+  .footer .andro-app .app a i {font-size: 45px;}
+  .footer .andro-app .app a h3 {margin-left: 5px;font-size: 18px;}
+
+  .scroll-top {font-size: 18px;}
+}
+/* ===== Small Labtop & Tablet Landscape ===== */
+@media (max-width: 900px) and (min-width: 601px) {
+  .modal form {width: 70%}
+
+  .header .navbar {padding-top: 0;}
+  .header .navbar .contain > div {float: none;margin: 15px auto;}
+  .header .navbar .contain .logo {width: 80%; text-align: center;}
+  .header .navbar .contain .logo img {height: 33px;}
+  .header .navbar .contain .tabs {width: 80%;margin: 0 auto;}
+  .header .navbar .contain .tabs ul li a {padding: 7px 0;}
+
+  .footer .links a {margin-right: 0;}
+  .footer .links a i {font-size: 25px;width: 30px;}
+  .footer .links {width: 22%;}
+  .footer .copyright {width: 78%;}
+  .footer .copyright h3 {font-size: 18px;}
+  .footer .andro-app {width: 50%;margin-top: 25px;}
+
+  .scroll-top {font-size: 16px;}
+  .scroll-top span {font-size: 16px;}
+}
+/* ===== Mobile Landscape & Tablet Portrait ===== */
+@media (max-width: 600px) and (min-width: 401px){
+  .modal form {width: 105%}
+
+  .header .navbar {padding-top: 0;}
+  .header .navbar .contain > div {float: none;margin: 10px auto;}
+  .header .navbar .contain .logo {width: 95%; text-align: center;}
+  .header .navbar .contain .logo img {height: 28px;}
+  .header .navbar .contain .tabs {width: 95%;margin: 0 auto;}
+  .header .navbar .contain .tabs ul li {margin: 0 3px;width: 18%;}
+  .header .navbar .contain .tabs ul li a {font-size: 15px;padding: 5px 0;}
+  .header .navbar .contain .tabs ul .user_name a img {width: 30px;}
+
+  .footer .links {width: 25%;}
+  .footer .links a {margin-right: 0;}
+  .footer .links a i {font-size: 25px;width: 25px;}
+  .footer .copyright {width: 70%;margin-top: 5px;}
+  .footer .copyright h3 {font-size: 18px;}
+  .footer .andro-app {width: 95%;margin-top: 15px;}
+  .footer .andro-app .app {width: 65%;margin: 0 auto;}
+  .footer .andro-app .app a i {font-size: 42px}
+  .footer .andro-app .app a h3 {font-size: 17px;margin-top: 12px;}
+
+  .scroll-top {font-size: 15px;padding: 13px;right: 10px}
+  .scroll-top span {font-size: 15px;margin-top: 8px}
+}
 
 /*
  *
@@ -403,10 +422,7 @@ body{ /* Variables */
   font-family: 'Exo 2', Arial, Tahoma;
 }
 
-.contain{
-  margin: 0 auto;
-  width: 1100px;
-}
+.contain{margin: 0 auto;width: 1100px;}
 
 .overlay{
   position: absolute;
@@ -417,19 +433,49 @@ body{ /* Variables */
   background-color: #1d1d1d80;
 }
 
-.clear{
-  clear: both;
+.clear{clear: both;}
+
+input, select, button, textarea:focus{outline: none;}
+
+input, select, textarea{border: 2px solid transparent;}
+
+textarea:focus,
+input:focus,
+select:focus{border-color: var(--main-color);box-shadow: none;}
+
+a{text-decoration: none;color: transparent;}
+
+ul{list-style: none;overflow: hidden;}
+
+section{
+  display: none;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin: 50px auto;
+  width: 90%;
+  text-align: center;
+  color: #333;
+  line-height: 1.5;
 }
 
-input, button:focus{
-  outline: none;
+/* ===== Large Desktop ===== */
+@media (min-width: 1200px) {
+  .contain {width: 1100px;margin: auto;}
 }
-
-a{
-  text-decoration: none;
+/* ===== Large Laptop & Medium Desktop ===== */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .contain {width: 825px;margin: auto;}
 }
-
-ul{
-  list-style: none;
-  overflow: hidden;
+/* ===== Small Labtop & Tablet Landscape ===== */
+@media (max-width: 900px) and (min-width: 601px) {
+  .contain {width: 550px;margin: auto;}
+}
+/* ===== Mobile Landscape & Tablet Portrait ===== */
+@media (max-width: 600px) and (min-width: 401px){
+  .contain {width: 390px;margin: auto;}
+}
+/* ===== Mobile Portriat ===== */
+@media (max-width: 400px) {
+  div {display: none;}
+  section {display: block;}
 }

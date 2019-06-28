@@ -1,6 +1,14 @@
-/*global console, $*/
+/*global console, $, alert*/
+function resizeIframe(){
+  var iFrame = document.getElementById('myframe'),
+      cont = iFrame.contentDocument,
+      contHeight = cont.body.offsetHeight;
+
+  iFrame.height = contHeight;
+};
 
 $(function () {
+
   'use strict';
   //////////////////////////////////////////////////////////////////////////////
   /*
@@ -42,41 +50,89 @@ $(function () {
 
   });
   //////////////////////////////////////////////////////////////////////////////
-  $('.adv-trigger').on('click', function () {
-    $('.adv-search').slideDown(800);
-
-    $('html, body').animate({
-        scrollTop: (($('.head-title').offset().top) - 20)
-    }, 800);
-  });
+  // /*
+  //   sliding up and down on clicking advanced search button
+  // */
+  // $('.adv-trigger').on('click', function () {
+  //   $('.adv-search').slideToggle(800);
+  //
+  //   $('html, body').animate({
+  //     scrollTop: (($('.head-title').offset().top) - 20)
+  //   }, 800);
+  // });
   //////////////////////////////////////////////////////////////////////////////
   /*
     changing the type of the input field from date to text when focuesd
     and reverse it when blured
   */
   $('.departure').focus(function () {
-    $(this).attr('type', 'date')
+    $(this).attr('type', 'date');
   });
 
   $('.departure').blur(function () {
-    $(this).attr('type', 'text')
+    $(this).attr('type', 'text');
   });
   //////////////////////////////////////////////////////////////////////////////
   /*
-    linking each trip card with it's brief(extention)
+    switching follow button color with click in home page
   */
-  $('.trip-card').on('click', function () {
-    $(this).siblings().removeClass('active');
-    $(this).addClass('active');
+  if ($('.agency-card button').hasClass('followed')) {
+    $(this).text('unfollow');
+  } else if ($('.agency-card button').hasClass('')) {
+    $(this).text('follow');
+  }
 
-    $('#' + $(this).data('id')).siblings().fadeOut(500).removeClass('active');
-    $('#' + $(this).data('id')).fadeIn(500).addClass('active');
+  $('.agency-card button').on('click', function () {
+    $(this).toggleClass('followed');
+
+    if ($(this).hasClass('followed')) {
+      $(this).text('unfollow');
+    } else if ($(this).hasClass('')) {
+      $(this).text('follow');
+    }
+  });
+  /* this one for the button in the user-agency page */
+  if ($('.tabs-panel .prof-intro button').hasClass('followed')) {
+    $(this).text('unfollow');
+  } else if ($('.tabs-panel .prof-intro button').hasClass('')) {
+    $(this).text('follow');
+  }
+
+  $('.tabs-panel .prof-intro button').on('click', function () {
+    $(this).toggleClass('followed');
+
+    if ($(this).hasClass('followed')) {
+      $(this).text('unfollow');
+    } else if ($(this).hasClass('')) {
+      $(this).text('follow');
+    }
+  });
+  /* this one for the save button in the trip page */
+  if ($('.trip-details .trip-actions #save-trip').hasClass('saved')) {
+    $(this).text('unsave');
+  } else if ($('.trip-details .trip-actions #save-trip').hasClass('')) {
+    $(this).text('saved');
+  }
+
+  $('.trip-details .trip-actions #save-trip').on('click', function () {
+    $(this).toggleClass('saved');
+
+    if ($(this).hasClass('saved')) {
+      $(this).text('unsave');
+    } else if ($(this).hasClass('')) {
+      $(this).text('saved');
+    }
+  });
+  /* this one for the save button in the vote page */
+  $('.trip-details .trip-actions button').on('click', function () {
+    $(this).siblings().removeClass('voted');
+    $(this).toggleClass('voted');
   });
   //////////////////////////////////////////////////////////////////////////////
   /*
     linking each tab with it's page in profile page
   */
-  $('.prof-tabs h3').on('click', function () {
+  $('.prof-tabs button').on('click', function () {
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
 
@@ -87,13 +143,13 @@ $(function () {
   /*
     linking each tab(history, saved) with it's page in my trips page
   */
-  $('.my-trips-tabs button').on('click', function () {
-    $(this).siblings().removeClass('active');
-    $(this).addClass('active');
-
-    $('#' + $(this).data('id')).siblings().fadeOut(500).removeClass('active');
-    $('#' + $(this).data('id')).fadeIn(500).addClass('active');
-  });
+  // $('.my-trips-tabs button').on('click', function () {
+  //   $(this).siblings().removeClass('active');
+  //   $(this).addClass('active');
+  //
+  //   $('#' + $(this).data('id')).siblings().fadeOut(500).removeClass('active');
+  //   $('#' + $(this).data('id')).fadeIn(500).addClass('active');
+  // });
   //////////////////////////////////////////////////////////////////////////////
   /*
     linking each tab with it's page in trip page
@@ -107,22 +163,32 @@ $(function () {
   });
   //////////////////////////////////////////////////////////////////////////////
   /*
-    edit the information of the account
+    Scroll To Top Button
   */
-  $('.tab-details .user-info .fa-edit').one('click', function () {
+  $(window).on('scroll', function () {
+    if ($(window).scrollTop() > 500) {
+      $('.scroll-top').fadeIn(250);
+    } else {
+      $('.scroll-top').fadeOut(250);
+    }
+  });
 
-    $('#' + $(this).data('id')).show(500).addClass('active').focus();
-    $(this).siblings('h3').hide(500);
-    $(this).attr('class', 'far fa-check-square');
+  $('.scroll-top').click(function () {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 1000);
+  });
 
-    $('.tab-details .user-info .fa-check-square').one('click', function () {
-
-      $(this).siblings('h3').text($('#' + $(this).data('id')).val());
-      $('#' + $(this).data('id')).hide(500).removeClass('active');
-      $(this).siblings('h3').show(500);
-
-    });
-
+  $('.scroll-top').hover(function () {
+    $('.scroll-top span').animate({
+      left: '8px',
+      opacity: 1
+    }, 250);
+  }, function () {
+    $('.scroll-top span').animate({
+      left: '50%',
+      opacity: 0
+    }, 250);
   });
   //////////////////////////////////////////////////////////////////////////////
   /*
@@ -140,7 +206,16 @@ $(function () {
     focus: true,
     controls: true
   });
-
-
+  //////////////////////////////////////////////////////////////////////////////
+  /*
+    the trigger of niceScroll
+  */
+  $(function () {
+    $("html").niceScroll({
+      cursorcolor: '#0BB',
+      cursorwidth: '8px',
+      cursorborderradius: "3px"
+    });
+  });
 
 });

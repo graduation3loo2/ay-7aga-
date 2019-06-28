@@ -4,7 +4,6 @@
   <head>
     <meta charset="utf-8">
     <title>Exodus -> Trips</title>
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"/> -->
     <link rel="stylesheet" href="{% static 'css/font-awesome/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/exo-2.css' %}">
@@ -13,260 +12,63 @@
   </head>
   <body>
 
-    <!-- ///////////////////////////////////////////////////////////////////////// -->
-		<div id="signup" class="modal">
-			<form class="modal-content animate" action=""> <!--el data 7atro7 lel server esmo eh -->
-				<div class='usercontainer'>
-			        <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Form">x</span>
-					<img src="{% static 'photos/user.jpg' %}" alt="Avatar" class="avatar">
-					<label> <p> Create Your Account </p></label>
-				</div>
-				<div class="container">
-					<input type="text" name="usernamedb" placeholder=" Username" >
-					<br><br>
-					<input type="text" placeholder=" Enter Email" name="email" >
-					<br><br>
-					<input type="text" placeholder=" Phone Number" name="number" required >
-					<br><br>
-					<input type="text" placeholder=" Country" name="Country" required>
-					<br><br>
-					<input type="text" placeholder=" City" name="city" >
-					<br><br>
-					<input type="password" placeholder=" Enter Password" name="psw" required>
-					<br><br>
-					<input type="password" placeholder=" Confirm Password" name="psw" required>
-					<br><br>
-					<label class="terms" >  By proceeding I agree to EXODUS's <a href="#" style="color:blue">Terms & Privacy</a></label> <br>
-					<button type="button" class=" btnsignup " >Submit</button> 
-					<button type="button" class=" btnsignup " onclick="document.getElementById('signup').style.display='none';document.getElementById('loginform').style.display='block'" >Already Have Account</button> <br> <br>
-				</div>
-			</form>
-		</div>
-		<!-- ///////////////////////////////////////////////////////////////////////// -->
-	  <div id="loginform" class="modal">
-			<form class="modal-content animate" action=""> <!--el data 7atro7 lel server esmo eh -->
-				<div class='usercontainer'>
-			       <span onclick="document.getElementById('loginform').style.display='none'" class="close" title="Close Form">x</span>
-				</div>
-				<div class="Login">
-                <br> <p> Please Login </p>
-                </div>
-				<div class="container">
-					<label for="name"> <b>Username</b></label> <br>
-					<input type="text" placeholder=" Enter Email" name="email" required>
-					<br><br>
-					<label for="psw"> <b>Password</b></label> <br>
-					<input type="password" placeholder=" Enter Password" name="psw" required><br>
-					<!--<label  class="Terms">  By proceeding I agree to EXODUS's <a href="#" style="color:blue">Terms & Privacy</a></label> <br> -->
-					<!--<label class="rm"> <input type="checkbox" checked="checked" name="remember"> Remember me </label>-->
-                    <span class="psw">Forgot <a href="#">password?</a></span><br>
-                    <button class="btn" type="submit">Login</button><br>
-					<button type="button" class=" btn " onclick="document.getElementById('loginform').style.display='none';document.getElementById('signup').style.display='block'" >Create Account</button> <br> <br>
-				</div>
-			</form>
-		</div>
-    <!-- ///////////////////////////////////////////////////////////////////////// -->
-
-    <!-- Start Header -->
-    <div class="header">
-      <div class="overlay">
-        <div class="navbar"> <!-- Start Nav Bar -->
-          <div class="contain">
-            <div class="logo">
-              <a href="{% url 'home' %}"><img src="{% static 'photos/others/logo-2-ed.png' %}" alt=""></a>
-            </div>
-            <div class="tabs">
-              <ul>
-                <li>
-                  <a href="{% url 'home' %}">home</a>
-                </li>
-                <li>
-                  <a href="{% url 'trips' %}">trips</a>
-                </li>
-                <li>
-                  <a href="{% url 'votes' %}">votes</a>
-                </li>
-                <li>
-                  <a href="{% url 'agencies' %}">agencies</a>
-                </li>
-                <li class="sign_in" onclick="document.getElementById('loginform').style.display='block'">
-                  <a>sign in</a>
-                </li>
-              </ul>
-              <div class="clear"></div>
-            </div>
-            <div class="clear"></div>
-          </div>
-        </div> <!-- End Nav Bar -->
-
-        <div class="head-title">
-          <h1>trips</h1>
-        </div> <!-- End Search Box -->
-      </div>
-    </div>
-    <!-- End Header -->
-
     <div class="contain">
       <!-- Start Filter -->
       <div class="filter">
-
         <h2>find your trip</h2>
-        <form class="" action="" method="">
-
-          <label>destination</label>
-          <input class="half" type="text" name="" value="" placeholder="City">
-
-          <label>date</label>
-          <input class="departure" type="text" name="" value="" placeholder="From...">
-          <input class="departure" type="text" name="" value="" placeholder="To...">
-
-          <label>duration in days</label>
-          <input type="number" name="" value="" placeholder="From...">
-          <input type="number" name="" value="" placeholder="To...">
-
-          <label>price</label>
-          <input type="number" name="" value="" placeholder="From...">
-          <input type="number" name="" value="" placeholder="To...">
-
-          <label>meals</label>
-          <select class="half" name="meals">
-            <option value="">select one...</option>
-            <option value="">halfboard</option>
-            <option value="">fullboard</option>
-          </select>
-
-          <label>agency</label>
-          <input class="half" type="text" name="" value="" placeholder="Agnecy Name...">
-
+        <form action="filter" method="get" name="form">
+          {{ form }}
+          <button type="submit" name="form"><i class="fas fa-filter"></i>filter</button>
         </form>
-        <button type="button" name="button"><i class="fas fa-filter"></i>filter</button>
 
       </div>
       <!-- End Filter -->
 
       <!-- Start Trips -->
       <div class="trips">
-        <div class="sort">
-          <select class="" name="">
-            <option value="">sort by...</option>
-            <option value="">price</option>
-            <option value="">date</option>
-            <option value="">duration</option>
-            <option value="">going</option>
-          </select>
-          <i class="fas fa-arrow-up"></i>
-          <i class="fas fa-arrow-down"></i>
-          <button type="button" name="button">sort</button>
-        </div>
-        <div class="trip-post">
-          <div class="trip-img">
-            <img src="{% static 'photos/header-17.jpg' %}" alt="">
-            <div class="overlay">
-              <button class="learn-more" type="button" name="button">learn more</button>
+      <div class="sort">
+        <form action="" method="post">
+            {% csrf_token %}
+            <select id="sort" name="select">
+                <option value="1">sort by...</option>
+                <option value="price">price</option>
+                <option value="date_from">date</option>
+            </select>
+            <i class="fas fa-arrow-up"></i>
+            <i class="fas fa-arrow-down"></i>
+            <button type="submit" name="button">sort</button>
+        </form>
+      </div>
+        {% for t in trips %}
+{#            <a href="{% url 'trip-page' %}/{{ t.name }}">#}
+          <div class="trip-post">
+            <div class="trip-img">
+              <img src="{{ t.tripphotos_set.all.0.url }}" alt="">
+              <div class="overlay">
+                <button class="learn-more" type="button" name="button">learn more</button>
+              </div>
+            </div>
+            <div class="trip-info">
+              <h2>{{ t.name }}</h2>
+              <h2>{{ t.agency.name }}</h2>
+              <h4><span>price</span>{{ t.price }}</h4>
+              <h4><span>date</span>{{ t.date_from|date:"d/m/Y" }}</h4>
+              <h4><span>duration</span> {{ t.duration.days }} days</h4>
+              <h4><span>meals</span>{{ t.meals }}</h4>
+
+              <h4><span><i class="fas fa-plane"></i>going</span>{{ t.goingto_set.count }}</h4>
+              <h4><span><i class="far fa-eye"></i>views</span>{{ t.views }}</h4>
             </div>
           </div>
-          <div class="trip-info">
-            <h2>cairo, giza</h2>
-            <h2>lucky tour</h2>
-            <h4><span>price</span> 1200</h4>
-            <h4><span>date</span> 2 / 5 / 2019</h4>
-            <h4><span>duration</span> 5 days</h4>
-            <h4><span>meals</span> fullboard</h4>
-
-            <h4><span><i class="fas fa-plane"></i>going</span> 35</h4>
-            <h4><span><i class="far fa-eye"></i>views</span> 80</h4>
-          </div>
-        </div>
-
-        <div class="trip-post">
-          <div class="trip-img">
-            <img src="{% static 'photos/header-18.jpg' %}" alt="">
-            <div class="overlay">
-              <button class="learn-more" type="button" name="button">learn more</button>
-            </div>
-          </div>
-          <div class="trip-info">
-            <h2>alexandria</h2>
-            <h2>cairo overland</h2>
-            <h4><span>price</span> 350</h4>
-            <h4><span>date</span> 18 / 6 / 2019</h4>
-            <h4><span>duration</span> 2 days</h4>
-            <h4><span>meals</span> halfboard</h4>
-
-            <h4><span><i class="fas fa-plane"></i>going</span> 22</h4>
-            <h4><span><i class="far fa-eye"></i>views</span> 65</h4>
-          </div>
-        </div>
-
-        <div class="trip-post">
-          <div class="trip-img">
-            <img src="{% static 'photos/header-15.jpg' %}" alt="">
-            <div class="overlay">
-              <button class="learn-more" type="button" name="button">learn more</button>
-            </div>
-          </div>
-          <div class="trip-info">
-            <h2>luxor and aswan</h2>
-            <h2>roca travel</h2>
-            <h4><span>price</span> 1800</h4>
-            <h4><span>date</span> 5 / 6 / 2019</h4>
-            <h4><span>duration</span> 7 days</h4>
-            <h4><span>meals</span> halfboard</h4>
-
-            <h4><span><i class="fas fa-plane"></i>going</span> 50</h4>
-            <h4><span><i class="far fa-eye"></i>views</span> 120</h4>
-          </div>
-        </div>
-
+{#        </a>#}
+        {% endfor %}
       </div>
       <!-- End Trips -->
     </div>
 
     <div class="clear"></div>
 
-    <!-- Start Footer -->
-    <div class="footer">
-      <div class="contain">
-        <div class="slogan">
-          <h2>exodus</h2>
-          <p>This website helps you choose a trip that suits you from a variety of options
-            in an easy and simple way that simplifies your options.</p>
-        </div>
-        <div class="contact">
-          <h2>contact us</h2>
-          <div class="messenger">
-            <span>messenger</span>
-            <p>facebook.com/exodus</p>
-          </div>
-          <div class="whats">
-            <span>whats app</span>
-            <p>+20 0120 745 3145</p>
-          </div>
-          <div class="email">
-            <span>email</span>
-            <p>exodus@yahoo.com</p>
-          </div>
-        </div>
-        <div class="links">
-          <h2>links</h2>
-          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
-          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a>
-          <div class="app">
-            <a href="https://play.google.com/store" target="_blank">
-            <i class="fab fa-android"></i>
-            <h3>download exodus app</h3>
-          </a>
-          </div>
-          <div class="clear"></div>
-        </div>
-      </div>
-    </div>
-    <!-- End Footer -->
-
     <script src="{% static 'js/JQuery%20(v3.2.1).js' %}"></script>
-    <script src="{% static 'js/jquery.skitter.min.js' %}"></script>
-    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-    <!-- <script src="js/bootstrap.min.js"></script> -->
     <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
