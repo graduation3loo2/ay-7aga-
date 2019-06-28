@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="{% static 'css/font-awesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/exo-2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+
+    <div class="header home-header">
+      <!-- Start Signup Form -->
+  		<div id="signup" class="modal">
+  			<div class="contain">
+  				<form> <!--el data 7atro7 lel server esmo eh -->
+  					<div class="form-head">
+  						<h2>create your account</h2>
+  					</div>
+  					<div class="form-mid">
+  						<input type="text" placeholder="Username" name="usernamedb" >
+  						<input type="text" placeholder="Enter Email" name="email" >
+  						<input type="text" placeholder="Phone Number" name="number" required >
+  						<input type="text" placeholder="Country" name="Country" required>
+  						<input type="text" placeholder="City" name="city" >
+  						<input type="password" placeholder="Enter Password" name="psw" required>
+  						<input type="password" placeholder="Confirm Password" name="psw" required>
+  						<span class="terms">by proceeding i agree to EXODUS's <a href="#">Terms & Privacy</a></span>
+  					</div>
+  					<div class="form-foot">
+  						<button type="submit">signup</button>
+  						<button type="button" onclick="document.getElementById('signup').style.display='none';
+  						document.getElementById('login').style.display='block'" >already have account</button>
+  					</div>
+  				</form>
+  			</div>
+  		</div>
+  		<!-- End Signup Form -->
+  		<!-- Start Login Form -->
+  	  <div id="login" class="modal">
+  			<div class="contain">
+  				<form> <!--el data 7atro7 lel server esmo eh -->
+  					<div class='form-head'>
+  						<h2>please login</h2>
+  	        </div>
+  					<div class="form-mid">
+  						<label for="name">username</label>
+  						<input type="text" placeholder="Enter Email" name="email" required>
+  						<label for="psw">password</label>
+  						<input type="password" placeholder="Enter Password" name="psw" required>
+  						<span class="remember"><input type="checkbox" name="remember">Remember me </span>
+  		        <span class="forgot"><a href="#">forgot password?</a></span>
+  					</div>
+  					<div class="form-foot">
+  						<button type="submit" class="btnsignup" >login</button>
+  						<button type="button" class="btnsignup" onclick="document.getElementById('login').style.display='none';
+  						document.getElementById('signup').style.display='block'" >create account</button>
+  					</div>
+  				</form>
+  			</div>
+  		</div>
+      <!-- End Login Form -->
+    </div>
+
+    <script src="{% static 'js/JQuery%20(v3.2.1).js' %}"></script>
+    <script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="utf-8">
+          <title>{{ agency.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/font-awesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/exo-2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/agency.css' %}">
+  </head>
+  <body>
+
+    <div class="contain">
+      <!-- Start Tabs Panel -->
+      <div class="tabs-panel">
+        <div class="prof-intro">
+          <img src="{{ agency.photo_url }}" alt="">
+          <h3>{{ agency.name }}</h3>
+          <span><i class="fas fa-star"></i>{{ agency.rate }}</span>
+          <span><i class="fas fa-users"></i>{{ agency.follows_set.count }}</span>
+          <div class="clear"></div>
+          <button class="" type="button" name="button">follow</button>
+        </div>
+        <div class="prof-tabs">
+          <form method="get" action="">
+              <button name="button" value="trips" type="submit" class="active" data-id="tab1">trips<i class="fas fa-chevron-right"></i></button>
+              <button name="button" value="votes" type="submit" data-id="tab2">votes<i class="fas fa-chevron-right"></i></button>
+              <button name="button" value="account" type="submit" data-id="tab3">account<i class="fas fa-chevron-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <!-- End Tabs Panel -->
+
+      <!-- Start Tab Details -->
+      <div>
+      {% block content %}
+        <!--
+
+        -->
+      {% endblock %}
+      </div>
+      <!-- End Tab Details -->
+    </div>
+
+    <div class="clear"></div>
+
+    <script src="{% static 'js/JQuery%20(v3.2.1).js' %}"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'agency.html' %}
+{% block content %}
+    <div id="tab2" class="tab-details active">
+
+            {% for vote in votes %}
+                <a href="vote-page.html">
+                <div class="post">
+                <div class="post-img">
+                    <img src="{{ vote.photo_url }}" alt="">
+                    <div class="overlay">
+                        <button class="learn-more" type="button" name="button">agency page</button>
+                    </div>
+                </div>
+                <div class="post-info">
+                    <h2>{{ vote.name }}</h2>
+                    <div class="clear"></div>
+                    <p>{{ vote.description }}</p>
+                    <h4><span><i class="fas fa-thumbs-up"></i>40</span> interested</h4>
+                    <h4><span><i class="fas fa-thumbs-down"></i>15</span> not interested</h4>
+                </div>
+            </div>
+                </a>
+            {% endfor %}
+
+
+    </div>
+{% endblock %}

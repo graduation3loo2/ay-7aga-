@@ -1,0 +1,15 @@
+<html>
+
+<title></title>
+
+<body>
+<main role="main" class="container">
+    {% csrf_token %}
+    <form method="POST">
+        {{ form.as_p }}
+        <button value="submit" class="btnsignup">Submit</button>
+        </main>
+    </form>
+
+</body>
+</html>

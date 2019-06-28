@@ -1,0 +1,34 @@
+{% extends 'agency.html' %}
+{% block content %}
+    <div id="tab3" class="tab-details active">
+        <div class="user-info">
+            <img src="{{ agency.photo_url }}" alt="">
+            <form class="" method="post">
+                <div>
+                    <label>Agency Name</label>
+                    <h3>{{ agency.name }}</h3>
+                </div>
+                <div>
+                    <label>bio</label>
+                    <h3>{{ agency.bio }}</h3>
+                </div>
+                <div>
+                    <label>address</label>
+                    <h3>{{ agency.address }}</h3>
+                </div>
+                <div>
+                    <label>e-mail</label>
+                    <h3>{{ agency.e_mail }}</h3>
+                </div>
+                <div>
+                    <label>phone</label>
+                        <ul>
+                            {% for t in agency.phones_set.all %}
+                                <h3>{{ t.phone }}</h3>
+                            {% endfor %}
+                        </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

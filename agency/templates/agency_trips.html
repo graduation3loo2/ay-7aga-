@@ -1,0 +1,39 @@
+{% extends 'agency.html' %}
+{% block content %}
+    <div id="tab1" class="tab-details active">
+        <div class="my-trips-tabs">
+            <form method="get" action="">
+                <button class="{{ history }}" data-id="history" value="history" type="submit" name="button">history</button>
+            </form>
+            <form method="get" action="">
+                <button class="{{ available }}" data-id="saved" value="available" type="submit" name="button">available</button>
+            </form>
+        </div>
+        <div>
+            <div id="history" class="post-contain active">
+                {% for t in trips %}
+                    <a href="trip-page.html">
+                        <div class="post">
+                            <div class="post-img">
+                                <img src="{{ t.tripphotos_set.all.0.url }}" alt="">
+                                <div class="overlay">
+                                    <button class="learn-more" type="button" name="button">review</button>
+                                </div>
+                            </div>
+                            <div class="post-info">
+                                <h2>{{ t.name }}</h2>
+                                <h2>{{ agency.name }}</h2>
+                                <h4><span>Price</span>{{ t.price }}</h4>
+                                <h4><span>date</span>{{ t.date_from|date:"d/m/Y"}}</h4>
+                                <h4><span>duration</span> {{ t.duration.days }} Days</h4>
+                                <h4><span>meals</span> {{ t.meals }}</h4>
+                                <h4><span><i class="fas fa-plane"></i>going</span>{{ t.goingto_set.count }}</h4>
+                                <h4><span><i class="far fa-eye"></i>views</span>{{ t.views }}</h4>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'main.html' %}
+{% block title %}
+    <title>Trips</title>
+{% endblock %}
+{% block iframe %}
+    <iframe src="{% url 'Trips' %}" id="myframe" onload="resizeIframe();"></iframe>
+{% endblock %}

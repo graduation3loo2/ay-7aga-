@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        {% block title %}
+        <title>Agencies</title>
+        {% endblock %}
+        <!-- <link rel="stylesheet" href="css/bootstrap.min.css"/> -->
+        <link rel="stylesheet" href="{% static 'css/font-awesome/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'css/exo-2.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+
+    <!-- Start Header -->
+    <div class="header">
+      <div class="overlay">
+        <div class="navbar"> <!-- Start Nav Bar -->
+          <div class="contain">
+            <div class="logo">
+              <a href="{% url 'home' %}"><img src="{% static 'photos/others/logo-2-ed.png' %}" alt=""></a>
+            </div>
+            <div class="tabs">
+              <ul>
+                <li>
+                  <a href="{% url 'home' %}">home</a>
+                </li>
+                <li>
+                  <a href="{% url 'trips' %}">trips</a>
+                </li>
+                <li>
+                  <a href="{% url 'votes' %}">votes</a>
+                </li>
+                <li>
+                  <a href="{% url 'agency_main' %}">agencies</a>
+                </li>
+                <li class="sign_in">
+                  <a href="forms.html">sign in</a>
+                </li>
+              </ul>
+              <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div> <!-- End Nav Bar -->
+      </div>
+    </div>
+    <!-- End Header -->
+    {% block iframe %}
+        <iframe src="{% url 'agencies' %}" id="myframe" onload="resizeIframe();"></iframe>
+    {% endblock %}
+
+    <!-- Start Footer -->
+    <div class="footer">
+      <div class="contain">
+        <div class="links">
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.yahoo.com" target="_blank"><i class="fab fa-yahoo"></i></a>
+          <div class="clear"></div>
+        </div>
+        <div class="copyright">
+          <h3>Copyright © 2019 <span>Exodus.com</span> , All Rights Reserved.</h3>
+        </div>
+        <div class="andro-app">
+          <div class="app">
+            <a href="agency-sitting.html" target="_blank">
+              <i class="fab fa-android"></i>
+              <h3>download exodus app</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Footer -->
+
+    <!-- Start Scroll To Top Button -->
+    <div class="scroll-top">
+      <span>Top</span>
+      <i class="fas fa-arrow-up"></i>
+    </div>
+    <!-- End Scroll To Top Button -->
+
+    <!-- Start Div Error -->
+    <section>
+      <h1>unfortunatly!...</h1>
+      <p>this website dosen't support screen less than 400px</p>
+    </section>
+    <!-- End Div Error -->
+
+    <script src="{% static 'js/JQuery%20(v3.2.1).js' %}"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>
