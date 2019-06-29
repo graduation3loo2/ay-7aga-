@@ -6,16 +6,14 @@ from api.views import *
 
 
 router = routers.DefaultRouter()
-router.register(r'trips', TripsViewSet)
-router.register(r'responses', ResponseViewSet)
-router.register(r'recent', RecentViewSet)
-router.register(r'users', UserViewSet)
-router.register(r'follownumber', FollownumberViewSet)
-router.register(r'follows', FollowViewSet)
-router.register(r'login', UserLoginViewset)
-router.register(r'goingto', GoingViewSet)
-router.register(r'delete', UserDeleteView)
-
+router.register(r'trips', TripsViewSet, "trips")
+router.register(r'votes', VotesViewSet, "response")
+router.register(r'recent', RecentViewSet, "recent")
+router.register(r'users', UserListViewSet, "users")
+router.register(r'follow', FollowViewSet, "follow")
+router.register(r'home_trips', TripsHomeViewSet, "home_trips")
+router.register(r'home_agencies', AgenciesHomeViewSet, "home_agencies")
+router.register(r'interests', InterestsModelViewSet, 'interests')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +25,8 @@ urlpatterns = [
     path('forms/', include('singup.urls')),
     path('user/', include('user.urls')),
     path('api/auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/user/<int:pk>/', UserView.as_view()),
+    path('api/user/login', UserLoginView.as_view()),
+    path('api/interests/<int:pk>', InterestedVoteViewSet.as_view()),
     path('api/', include(router.urls)),
 ]

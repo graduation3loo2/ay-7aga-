@@ -205,7 +205,7 @@ class Users(models.Model):
     phone = models.CharField(max_length=11, blank=True, null=True)
     city = models.CharField(max_length=45)
     photo_url = models.TextField(blank=True, null=True)
-    e_mail = models.CharField(db_column='e-mail', max_length=45, blank=True, null=True)
+    e_mail = models.CharField(db_column='e-mail', max_length=45, blank=True, null=True, unique=True )
 
     class Meta:
         managed = False
