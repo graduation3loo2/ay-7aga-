@@ -26,7 +26,7 @@ urlpatterns = [
     path('user/', include('user.urls')),
     path('api/auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/user/<int:pk>/', UserView.as_view()),
-    path('api/user/login', UserLoginView.as_view()),
+    path('api/user/login/', UserLoginView.as_view()),
     path('api/interests/<int:pk>', InterestedVoteViewSet.as_view()),
     path('api/', include(router.urls)),
 ]
