@@ -14,7 +14,7 @@ from user.models import Follows, Users
 from votes.models import Vote, Response as ResponseModel
 
 
-class TripsSerializer(serializers.ModelSerializer):
+class TripSerializer(serializers.ModelSerializer):
     agency_name = serializers.ReadOnlyField(source='agency.name')
 
     class Meta:
@@ -114,6 +114,14 @@ class UserSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+class UserPassSerializer(serializers.ModelSerializer):
+    password_new = serializers.CharField(max_length=200)
+
+    class Meta:
+        model = Users
+        fields = "__all__"
+
+
 class AgenciesHomeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Agencies
@@ -141,3 +149,27 @@ class InterestedvoteSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class OneUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Users
+        fields = "__all__"
+
+
+class TripsSerializer(serializers.ModelSerializer):
+    agency_name = serializers.ReadOnlyField(source='trip.agency.name')
+    name = serializers.ReadOnlyField(source='trip.name')
+    from_location = serializers.ReadOnlyField(source='trip.from_location')
+    to_location = serializers.ReadOnlyField(source='trip.to_location')
+    date_from = serializers.ReadOnlyField(source='trip.date_from')
+    date_to = serializers.ReadOnlyField(source='trip.date_to')
+    deadline = serializers.ReadOnlyField(source='trip.deadline')
+    agency_name = serializers.ReadOnlyField(source='trip.agency.name')
+    meals = serializers.ReadOnlyField(source='trip.meals')
+    price = serializers.ReadOnlyField(source='trip.price')
+    description = serializers.ReadOnlyField(source='trip.description')
+    views = serializers.ReadOnlyField(source='trip.views')
+    rate = serializers.ReadOnlyField(source='trip.rate')
+
+    class Meta:
+        model = TripPhotos
+        fields = "__all__"
