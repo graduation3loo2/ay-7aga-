@@ -8,6 +8,8 @@ class Users(models.Model):
     e_mail = models.CharField(db_column='e-mail', max_length=45, blank=True, null=True, unique=True)
     phone = models.CharField(max_length=11, blank=True, null=True)
     city = models.CharField(max_length=45)
+    photo_url = models.TextField(blank=True, null=True)
+
 
     class Meta:
         managed = False
