@@ -105,7 +105,6 @@ class UserLoginSerializer(serializers.ModelSerializer):
             if not password == decoded_text:
                 raise ValidationError("Incorrect credentials")
 
-        data["token"] = "SOME RANDOM TOKEN"
         return data
 
 

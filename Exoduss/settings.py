@@ -13,11 +13,7 @@ SECRET_KEY = '6=fe(=e!_@^k@qsu8i8e&($(^is%p1xv5ima4(j-ar#^d6!%_!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-    '10.0.2.2',
-]
+ALLOWED_HOSTS = ['*']
 
 STATICFILES_DIRS = [
     os.path.join(os.path.dirname(__file__), 'static'),

@@ -1,4 +1,4 @@
-from django.http import Http404
+from django.http import Http404, JsonResponse
 from rest_framework import viewsets
 
 # Create your views here.
@@ -47,9 +47,15 @@ class UserLoginView(APIView):
         serializer_class = UserLoginSerializer(data=data)
 
         if serializer_class.is_valid(raise_exception=True):
-            new_data = serializer_class.data
-            return ResponseRest(new_data, status=status.HTTP_200_OK)
-        return ResponseRest(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
+            user = Users.objects.filter(e_mail__icontains=data['e_mail'])
+            return JsonResponse({'message': "logged hhhhhhh", 'valid': True ,'user': {
+                'id': user[0].user_id,
+                'name': user[0].name,
+                'phone': user[0].phone,
+                'city': user[0].city,
+                'e_mail': user[0].e_mail
+            }})
+        return JsonResponse({'message': "Error credentials", 'valid': False})
 
 
 class UserView(APIView):
@@ -65,21 +71,29 @@ class UserView(APIView):
     def get(self, request, pk, format=None):
         user = self.get_object(pk)
         serializer = UserSerializer(user)
-        return ResponseRest(serializer.data)
+        return JsonResponse(serializer.data)
 
     def patch(self, request, pk, format=None):
         user = self.get_object(pk)
         serializer = UserSerializer(user, data=request.data, partial=True)
         if serializer.is_valid():
             password = serializer.validated_data['password']
-            if password is not None or password != '':
-                cipher_suite = Fernet(settings.ENCRYPT_KEY)
-                encrypted_text = cipher_suite.encrypt(password.encode('ascii'))
-                encrypted_text64 = base64.urlsafe_b64encode(encrypted_text).decode("ascii")
-                serializer.validated_data['password'] = encrypted_text64
-            serializer.save()
-            return ResponseRest(serializer.data)
-        return ResponseRest(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            if serializer.validated_data['password'] is not None:
+                if password is not None or password != '':
+                    cipher_suite = Fernet(settings.ENCRYPT_KEY)
+                    encrypted_text = cipher_suite.encrypt(password.encode('ascii'))
+                    encrypted_text64 = base64.urlsafe_b64encode(encrypted_text).decode("ascii")
+                    serializer.validated_data['password'] = encrypted_text64
+                serializer.save()
+            users = Users.objects.filter(user_id=pk)[0]
+            return JsonResponse({'valid': True, 'user': {
+                'name': users.name,
+                'phone': users.phone,
+                'city': users.city,
+                'e_mail': users.e_mail,
+            }})
+        return JsonResponse({'message': "Error"})
+
 
     def delete(self, request, pk, format=None):
         user = self.get_object(pk)
